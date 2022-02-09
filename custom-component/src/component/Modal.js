@@ -33,7 +33,7 @@ export const ModalBtn = styled.button`
 `;
 
 export const BoxInModal = styled.div`
-  width: 15%;
+  width: 17%;
   height: 10%;
   background: white;
   margin-top: 535px;
@@ -43,29 +43,22 @@ export const BoxInModal = styled.div`
 `;
 
 export const Upper = styled.div`
+  width: 100%;
+  height: 30%;
   display: flex;
-  flex-direction: row;
-  height: 20%;
-`;
-
-export const LeftUpper = styled.div`
-  width: 90%;
+  justify-content: center;
+  padding-top: 5px;
 `;
 
 export const CloseBtn = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 10%;
-  height: 20px;
-  margin-top: 5px;
-  margin-right: 10px;
   cursor: pointer;
 `;
 
 export const Desc = styled.div`
-  height: 80%;
+  height: 65%;
   text-align: center;
-  line-height: 60px;
+  line-height: 40px;
+  font-size: 13px;
 `;
 
 export const Modal = () => {
@@ -81,9 +74,8 @@ export const Modal = () => {
         <ModalBtn onClick={modalHandler}> {isOpenModal === false ? 'Open Modal' : 'Opened!'}</ModalBtn>
       </ModalContainer>
       {isOpenModal ? <ModalBackground>
-        <BoxInModal onClick={(e) => e.stopPropagation()}>
+        <BoxInModal>
           <Upper>
-            <LeftUpper />
             <CloseBtn onClick={modalHandler}>&times;</CloseBtn>
           </Upper>
           <Desc>HELLO CODESTATES!</Desc>
