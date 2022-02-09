@@ -35,12 +35,12 @@ export const Desc = styled.div`
 
 export const Tab= () => {
   const menuArr = [ 
-    { tabMenu : 'Tab menu ONE', content : 'Tab1' },
-    { tabMenu : 'Tab menu TWO', content : 'Tab2' },
-    { tabMenu : 'Tab menu THREE', content: 'Tab3' }
+    { tabMenu: 'Tab menu ONE', content: 'Tab1' },
+    { tabMenu: 'Tab menu TWO', content: 'Tab2' },
+    { tabMenu: 'Tab menu THREE', content: 'Tab3' }
   ];
 
-  const [ isTabSelected, setIsTabSelected ] = useState(null);
+  const [ isTabSelected, setIsTabSelected ] = useState(0);
 
   const tabHandler = (id) => {
     setIsTabSelected(id);
