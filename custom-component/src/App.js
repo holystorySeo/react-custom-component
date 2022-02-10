@@ -16,7 +16,7 @@ export const WholeContainer = styled.div`
 export const SubContainer = styled.div`
   width: 40%;
   height: 20rem;
-  border: 2px solid #E6E6E6;
+  border: 2px solid #A4A4A4;
   border-radius: 10px;
   margin: 2rem auto;
 `;
