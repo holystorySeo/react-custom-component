@@ -74,7 +74,7 @@ export const InputTag = styled.input.attrs({
   placeholder: 'Place enter to add Tags'
 })`
   border: none;
-  width: 50%;
+  width: auto;
   height: 30%;
   margin: 5px;
 
@@ -82,7 +82,7 @@ export const InputTag = styled.input.attrs({
     outline: none;
   }
   ::placeholder {
-    font-size: 14px;
+    font-size: 13px;
   }
 `;
 
@@ -94,6 +94,7 @@ export const Tag = () => {
 
   const checkInputValue = (e) => {
     setInputValue(e.target.value)
+    console.log(isBeenTag);
   }
 
   const addTagData = (e) => {
@@ -108,6 +109,11 @@ export const Tag = () => {
     setTagData(tagData.filter((tag, id) => {
       return idx !== id;
     }))
+
+    if(tagData.length === 0) {
+      setIsBeenTag(false);
+    }
+    console.log(isBeenTag);
   }
 
   return (
