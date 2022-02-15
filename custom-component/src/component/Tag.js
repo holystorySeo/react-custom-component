@@ -55,7 +55,6 @@ export const OneTagSection = styled.span`
 `;
 
 export const TagCloseIcon = styled.span`
-/* border: 2px solid black; */
   margin-left: 5px;
   background: white;
   border-radius: 50px;

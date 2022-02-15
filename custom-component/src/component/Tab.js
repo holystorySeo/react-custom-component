@@ -17,7 +17,7 @@ export const TabContainer = styled.div`
     cursor: pointer;
     padding-left: 10px;
 
-    &.submenu--fucused {
+    &.submenu--focused {
       background-color: #8000FF;
       color: white;
     }
@@ -51,7 +51,7 @@ export const Tab= () => {
       <TabContainer>
         {menuArr.map((el, idx) => {
           return (
-            <div key={idx} className={`submenu ${isTabSelected === idx ? 'submenu--fucused' : ''}`} onClick={() => tabHandler(idx)}>{el.content}</div>
+            <div key={idx} className={`submenu ${isTabSelected === idx ? 'submenu--focused' : ''}`} onClick={() => tabHandler(idx)}>{el.content}</div>
           )
         })}
       </TabContainer>
