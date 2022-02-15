@@ -1,13 +1,12 @@
 import { useState } from 'react/cjs/react.development';
 import styled from 'styled-components'; 
 
-export const AutoCompleteWrapperr = styled.div`
+export const AutoCompleteWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 87%;
   width: 100%;
-  border: 1px solid black;
 `;
 
 export const AutoCompleteContainer = styled.div`
@@ -111,7 +110,7 @@ export const AutoComplete = () => {
 
   return (
     <>
-      <AutoCompleteWrapperr onClick={handleCloseDropDown}>
+      <AutoCompleteWrapper onClick={handleCloseDropDown}>
         <AutoCompleteContainer hasText={hasText}>
           <AutoCompleteInput value={inputValue} onKeyPress={checkInputValue} onChange={checkInputValue}></AutoCompleteInput>
           <AutoCompleteCloseIcon onClick={removeInputValue}>&times;</AutoCompleteCloseIcon>
@@ -125,7 +124,7 @@ export const AutoComplete = () => {
               })}
             </DropDownContainer> 
           : ''}
-      </AutoCompleteWrapperr>
+      </AutoCompleteWrapper>
     </>
   )
 }
