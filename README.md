@@ -1,2 +1,3 @@
-# wanted_pre_onboarding
-원티드_프리온보딩
+# react-custom-component
+
+react.js를 활용한 custom-component 입니다.
