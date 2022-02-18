@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-custom-component/static/css/main.e6c13ad2.css",
+    "main.js": "/react-custom-component/static/js/main.46165a13.js",
+    "index.html": "/react-custom-component/index.html",
+    "main.e6c13ad2.css.map": "/react-custom-component/static/css/main.e6c13ad2.css.map",
+    "main.46165a13.js.map": "/react-custom-component/static/js/main.46165a13.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.46165a13.js"
+  ]
+}

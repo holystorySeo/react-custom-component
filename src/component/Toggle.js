@@ -1,42 +1,52 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
+const mainColor = '#8000FF'; // mainColor 변수 선언
+const subColor = '#E6E6E6'; // subColor 변수 선언
+
 export const ToggleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 8rem;
-
+  
   >.toggle-container {
     position: relative;
     width: 60px;
     height: 24px;
     border-radius: 30px;
-    background-color: #8b8b8b;
-    transition: all ease .3s 0s;
+    // left에서 right으로 color 변화 subColor --> mainColor 50%이므로 절반이나 size 200%로 꽉참
+    background: linear-gradient(to left, ${subColor} 50%, ${mainColor} 50%) right;
+    background-size: 200%;
+    transition: 1s;
     cursor: pointer;
     &.toggle--checked {
-      background-color: #8000FF;
+      background: linear-gradient(to right,  ${mainColor} 50%, ${subColor} 50%) left;
+      background-size: 200%;
+      transition: 1s;
     }
 
-    >.toggle-circle {
+    >.toggle-circle { // toggle-container의 자식 요소
       position: absolute;
-      top: 3px;
-      left: 5px;
-      width: 18px;
-      height: 18px;
+      top: 2px;
+      left: 1px; // circle이 left 5px에서 시작한다.
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background-color: #ffffff;
-      transition: all ease .3s 0s;
+      transition: 1s;
       cursor: pointer;
       &.toggle--checked {
-        left: 37px;
+        left: 39px; // circle이 left 37px까지 이동한다.
+        transition: 1s;
       }
     }
   }
 
-  >.desc {
+  >.desc { // 'Toggle Switch ON/OFF' text
     margin-top: 10px;
+
+    }
   }
 `;
 
