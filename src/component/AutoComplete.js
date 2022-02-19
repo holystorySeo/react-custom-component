@@ -75,7 +75,7 @@ export const AutoComplete = () => {
   const dataBase = [
     'culture', 'experience', 'education', 
     'symbol', 'effect', 'liberty', 
-    'affair', 'comfort', 'affair'
+    'affair', 'comfort', 'achievement'
   ]
   const [ inputValue, setInputValue ] = useState('')
   const [ hasText, setHasText ] = useState(false);
