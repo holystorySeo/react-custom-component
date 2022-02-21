@@ -1,15 +1,6 @@
 ---
 name: Error Handling Template
 about: Error Handling
-title: ''
-labels: ''
-assignees: ''
-
----
-
----
-name: Error Handling Template
-about: Error Handling
 title: 22.01.00 Error Handling
 labels: ''
 assignees: ''
