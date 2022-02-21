@@ -15,7 +15,10 @@ react-custom-component 목록
 
 지속적으로 component를 추가할 예정입니다.
 
-[페이지 링크](https://holystoryseo.github.io/react-custom-component/)
+[페이지 링크][]
+
+# link define
+[페이지 링크]: https://holystoryseo.github.io/react-custom-component/
 
 ## 구현 방법
 
