@@ -9,8 +9,9 @@ react-custom-component 목록
 4. Tag
 5. AutoComplete
 6. ClickToEdit
-7. Carousel(예정)
-8. Infite scroll(예정)
+7. Carousel (예정)
+8. Infite scroll (예정)
+9. Loading (예정)
 
 지속적으로 component를 추가할 예정입니다.
 
