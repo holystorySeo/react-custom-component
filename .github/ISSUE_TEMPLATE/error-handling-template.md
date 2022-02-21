@@ -7,6 +7,15 @@ assignees: ''
 
 ---
 
+---
+name: Error Handling Template
+about: Error Handling
+title: 22.01.00 Error Handling
+labels: ''
+assignees: ''
+
+---
+
 > 해결된 에러라면 라벨에 'Complete' 를 달아주세요.
 > 미해결된 에러라면 라벨을 'In progress' 로 변경해주세요.
 
