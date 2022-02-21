@@ -1,8 +1,21 @@
-# Custom component
+# react-custom component
+본 과제는 React.js를 활용하여 custom component를 구현하고 있습니다.
+기능 구현에 직접적인 영향을 주는 라이브러리는 사용하지 않고 있습니다.
 
-본 과제에서 구현한 Custom component는 Toggle, Modal, Tab, Tag, AutoComplete, ClickToEdit 으로 총 6가지입니다.
+react-custom-component 목록
+1. Toggle
+2. Modal
+3. Tab
+4. Tag
+5. AutoComplete
+6. ClickToEdit
+7. Carousel(예정)
+8. Infite scroll(예정)
 
-## 구현 방법과 간략한 이유
+지속적으로 component를 추가할 예정입니다.
+
+
+## 구현 방법
 
 리액트의 Hook인 useState를 활용하여 입력값, 클릭여부에 따라 component의 기능이 작동하도록 하였습니다.
 
@@ -71,7 +84,6 @@ onBlur 이벤트는 브라우저 창이 포커스를 잃었을 경우에 동작�
 
 #### Tag
 ![Tag](https://user-images.githubusercontent.com/87353284/153992411-d859282d-3c5a-48b5-9a2c-d4688a5e1da8.gif)
-
 
 #### AutoComplete
 ![AutoComplete](https://user-images.githubusercontent.com/87353284/153992488-8cc94a02-e5f6-4b43-bc51-d1a147299d1d.gif)
