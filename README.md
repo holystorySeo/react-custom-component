@@ -17,7 +17,6 @@ react-custom-component 목록
 
 [페이지 링크][]
 
-# link define
 [페이지 링크]: https://holystoryseo.github.io/react-custom-component/
 
 ## 구현 방법
