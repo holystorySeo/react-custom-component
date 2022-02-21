@@ -17,7 +17,7 @@ react-custom-component 목록
 
 [페이지 링크][]
 
-[페이지 링크]: https://holystoryseo.github.io/react-custom-component/{:target="_blank"}
+[페이지 링크]: (https://holystoryseo.github.io/react-custom-component/){:target="_blank"}
 
 ## 구현 방법
 
