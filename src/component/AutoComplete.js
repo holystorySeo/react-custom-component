@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components'; 
 
 export const AutoCompleteWrapper = styled.div`
@@ -67,7 +67,11 @@ export const DropDownContainer = styled.ul`
 
     &:hover {
       background: #E6E6E6;
-  }
+    }
+    
+    &.select--focused {
+      background: #E6E6E6;
+    }
   }
 `;
 
@@ -80,10 +84,12 @@ export const AutoComplete = () => {
   const [ inputValue, setInputValue ] = useState('')
   const [ hasText, setHasText ] = useState(false);
   const [ matchedList, setMatchedList ] = useState([])
+  const [ isIdxSelected, setIsIdxSelected ] = useState()
 
   const handleCloseDropDown = () => {
     setInputValue('');
     setHasText(false);
+    setIsIdxSelected();
   }
 
   const checkInputValue = (e) => {
@@ -95,32 +101,52 @@ export const AutoComplete = () => {
 
     if(e.target.value === '') {
       setHasText(false);
+
     }
   }
 
   const removeInputValue = () => {
     setInputValue('');
     setHasText(false);
+    setIsIdxSelected();
   }
 
   const selectList = (e) => {
     e.stopPropagation();
     setInputValue(e.target.textContent)
-    setHasText(false); // 클릭하면 Dropdown 리스트가 사라짐
+    setHasText(false);// 클릭하면 Dropdown 리스트가 사라짐
+  }
+
+  const handleKeyPress = (e) => {
+    if(e.key === 'ArrowDown') {
+      if(isIdxSelected === undefined) {
+        setIsIdxSelected(0);
+        setInputValue(matchedList[0]);
+      } else {
+        setIsIdxSelected((isIdxSelected + 1))
+        setInputValue(matchedList[isIdxSelected + 1]);
+      }
+    } else if(e.key === 'ArrowUp') {
+      if(isIdxSelected === undefined) {
+      } else {
+        setIsIdxSelected((isIdxSelected - 1))
+        setInputValue(matchedList[isIdxSelected - 1]);
+      }
+    }
   }
 
   return (
     <>
       <AutoCompleteWrapper onClick={handleCloseDropDown}>
         <AutoCompleteContainer hasText={hasText}>
-          <AutoCompleteInput value={inputValue} onChange={checkInputValue}></AutoCompleteInput>
+          <AutoCompleteInput value={inputValue} onKeyDown={handleKeyPress} onChange={checkInputValue}></AutoCompleteInput>
           {hasText ? <AutoCompleteCloseIcon onClick={removeInputValue}>&times;</AutoCompleteCloseIcon> : ''}
         </AutoCompleteContainer>
         {hasText 
           ? <DropDownContainer>
               {matchedList.map((list, idx) => {
                 return (
-                  <li key={idx} className='dropDownList' onClick={selectList}>{list}</li>
+                  <li key={idx} className={`dropDownList ${isIdxSelected === idx ? 'select--focused' : ''}`} onClick={selectList}>{list}</li>
                 )
               })}
             </DropDownContainer> 
