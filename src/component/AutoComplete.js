@@ -106,14 +106,15 @@ export const AutoComplete = () => {
   const selectList = (e) => {
     e.stopPropagation();
     setInputValue(e.target.textContent)
+    setHasText(false); // 클릭하면 Dropdown 리스트가 사라짐
   }
 
   return (
     <>
       <AutoCompleteWrapper onClick={handleCloseDropDown}>
         <AutoCompleteContainer hasText={hasText}>
-          <AutoCompleteInput value={inputValue} onKeyPress={checkInputValue} onChange={checkInputValue}></AutoCompleteInput>
-          <AutoCompleteCloseIcon onClick={removeInputValue}>&times;</AutoCompleteCloseIcon>
+          <AutoCompleteInput value={inputValue} onChange={checkInputValue}></AutoCompleteInput>
+          {hasText ? <AutoCompleteCloseIcon onClick={removeInputValue}>&times;</AutoCompleteCloseIcon> : ''}
         </AutoCompleteContainer>
         {hasText 
           ? <DropDownContainer>
