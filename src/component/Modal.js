@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import { useState } from "react";
+import styled from "styled-components";
 
-export const ModalBackground =  styled.div`
+export const ModalBackground = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -13,18 +13,18 @@ export const ModalBackground =  styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  display: block; 
+  display: block;
   height: 100%;
-  line-height: 20rem; 
-  text-align: center; 
-  margin: 0 auto; 
+  line-height: 20rem;
+  text-align: center;
+  margin: 0 auto;
   width: 30%;
 `;
 
 export const ModalBtn = styled.button`
   width: 100px;
   height: 2.5rem;
-  background-color: #8000FF;
+  background-color: #8000ff;
   border-radius: 50px;
   color: white;
   font-weight: 900;
@@ -62,25 +62,30 @@ export const Desc = styled.div`
 `;
 
 export const Modal = () => {
-  const [ isOpenModal, setIsOpenModal ] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   const modalHandler = () => {
     setIsOpenModal(!isOpenModal);
-  }
+  };
 
   return (
     <>
       <ModalContainer>
-        <ModalBtn onClick={modalHandler}> {isOpenModal === false ? 'Open Modal' : 'Opened!'}</ModalBtn>
+        <ModalBtn onClick={modalHandler}>
+          {" "}
+          {isOpenModal === false ? "Open Modal" : "Opened!"}
+        </ModalBtn>
       </ModalContainer>
-      {isOpenModal ? <ModalBackground>
-        <BoxInModal>
-          <Upper>
-            <CloseBtn onClick={modalHandler}>&times;</CloseBtn>
-          </Upper>
-          <Desc>HELLO CODESTATES!</Desc>
-        </BoxInModal>
-      </ModalBackground> : null}
+      {isOpenModal ? (
+        <ModalBackground>
+          <BoxInModal>
+            <Upper>
+              <CloseBtn onClick={modalHandler}>&times;</CloseBtn>
+            </Upper>
+            <Desc>HELLO CODESTATES!</Desc>
+          </BoxInModal>
+        </ModalBackground>
+      ) : null}
     </>
-  )
-}
+  );
+};

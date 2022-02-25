@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components'; 
 
 export const AutoCompleteWrapper = styled.div`
@@ -117,7 +117,7 @@ export const AutoComplete = () => {
     setHasText(false);// 클릭하면 Dropdown 리스트가 사라짐
   }
 
-  const handleKeyPress = (e) => {
+  const handleArrowKey= (e) => {
     const maxId = matchedList.length; // 드롭다운 리스트의 최대 인덱스값을 구한다.
 
     if(e.key === 'ArrowDown') {
@@ -151,11 +151,18 @@ export const AutoComplete = () => {
     }
   }
 
+  const handleKeyPress = (e) => {
+    if(e.key === 'Enter') {
+      setInputValue(e.target.value);
+      setHasText(false);
+    }
+  }
+
   return (
     <>
       <AutoCompleteWrapper onClick={handleCloseDropDown}>
         <AutoCompleteContainer hasText={hasText}>
-          <AutoCompleteInput value={inputValue} onKeyDown={handleKeyPress} onChange={checkInputValue}></AutoCompleteInput>
+          <AutoCompleteInput value={inputValue} onKeyPress={handleKeyPress} onKeyDown={handleArrowKey} onChange={checkInputValue}></AutoCompleteInput>
           {hasText ? <AutoCompleteCloseIcon onClick={removeInputValue}>&times;</AutoCompleteCloseIcon> : ''}
         </AutoCompleteContainer>
         {hasText 
