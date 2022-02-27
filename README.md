@@ -39,7 +39,7 @@ toggle 상태를 설명하는 description(toggle Switch on || toggle Switch off)
 background의 linear-gradient를 설정하여 해결
 ```js
 >.toggle-container {
-    background: linear-gradient(to left,  50%, ${mainColor} 50%) right;
+    background: linear-gradient(to left,  ${subColor} 50%, ${mainColor} 50%) right;
     background-size: 200%;
     transition: 1s;
     &.toggle--checked {
