@@ -1,6 +1,8 @@
 # react-custom component
-본 과제는 React.js를 활용하여 custom component를 구현하고 있습니다.
+React.js를 활용하여 custom component를 구현하고 있습니다.
 기능 구현에 직접적인 영향을 주는 라이브러리는 사용하지 않고 있습니다.
+
+[페이지 링크](https://holystoryseo.github.io/react-custom-component/)
 
 react-custom-component 목록
 1. Toggle
@@ -9,13 +11,10 @@ react-custom-component 목록
 4. Tag
 5. AutoComplete
 6. ClickToEdit
-7. Carousel (예정)
+7. Carousel
 8. Infite scroll (예정)
 9. Loading (예정)
 
-지속적으로 component를 추가할 예정입니다.
-
-[페이지 링크](https://holystoryseo.github.io/react-custom-component/)
 
 ## 구현 방법
 
