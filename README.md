@@ -1,5 +1,5 @@
 # react-custom component
-React.js를 활용하여 custom component를 구현하고 있습니다.
+React.js를 활용하여 custom component를 구현하고 있습니다.  
 기능 구현에 직접적인 영향을 주는 라이브러리는 사용하지 않고 있습니다.
 
 [페이지 링크](https://holystoryseo.github.io/react-custom-component/)
@@ -11,21 +11,43 @@ react-custom-component 목록
 4. Tag
 5. AutoComplete
 6. ClickToEdit
-7. Carousel
-8. Infite scroll (예정)
+7. Carousel - index, slider
+8. Infinite scroll (예정)
 9. Loading (예정)
 
 
 ## 구현 방법
-
-리액트의 Hook인 useState를 활용하여 입력값, 클릭여부에 따라 component의 기능이 작동하도록 하였습니다.
+리액트의 Hook인 useState, useEffect, useRef를 활용하여  
+입력값과 이벤트 핸들러에 따라 component 기능이 작동하도록 하였습니다.
 
 ### `Toggle`
+#### 설명
+useState를 사용하여 토글 버튼의 on/off 여부를 확인할 수 있도록 하였습니다.  
+토글 버튼 제어를 위해서 toggleHandler라는 이벤트 핸들러를 사용하여 클릭할 때마다 상태값을 T/F로 체크했습니다.  
+toggle 상태를 설명하는 description(toggle Switch on || toggle Switch off)은 조건부 연산자를 활용하여 구현하였습니다.
 
-Toggle 컴포넌트는 useState를 사용하여 토글 버튼의 on/off 여부를 확인할 수 있도록 하였습니다.
-토글 버튼 제어를 위해서 toggleHandler라는 이벤트 핸들러를 사용하여 클릭할 때마다 상태값을 T/F로 체크했습니다.
+#### 기술 이슈
+1.CSS: 토근 원이 이동을 하면서 배경색이 원의 중간까지만 채워지는 느낌의 효과   
+<br>
+[수정 전]: 한번에 배경색이 변한다.  
+![Feb-28-2022 00-22-44](https://user-images.githubusercontent.com/87353284/155888438-f5439d12-be82-4ca9-8b6f-54c47cedfb05.gif)  
+<br>
+[수정 후]: 토글 원의 이동에 따가 원의 중간까지만 배경색이 변한다.  
+![Feb-28-2022 00-13-47](https://user-images.githubusercontent.com/87353284/155888153-40f63f11-e920-45d8-959a-a366e4462960.gif)  
 
-ToggleContainer에 toggle 상태를 설명하는 description은 조건부 연산자를 활용하여 구현하였습니다.
+#### 해결 방법
+background의 linear-gradient를 설정하여 해결
+```js
+>.toggle-container {
+    background: linear-gradient(to left,  50%, ${mainColor} 50%) right;
+    background-size: 200%;
+    transition: 1s;
+    &.toggle--checked {
+      background: linear-gradient(to right,  ${mainColor} 50%, ${subColor} 50%) left;
+      background-size: 200%;
+      transition: 1s;
+    }
+```
 
 ### `Modal`
 
