@@ -35,7 +35,7 @@ const IMG = styled.img`
   height: 100%;
 `;
 
-export const CaroselIdx = () => {
+export const CarouselIdx = () => {
   const [currentImgIdx, setCurrentImgIdx] = useState(0); //현재 보여지는 인덱스 값, 초기값 0
 
   const ImgHandler = (btnType) => {

@@ -46,7 +46,7 @@ const Button = styled.button`
   }
 `;
 
-export const CaroselSlider = () => {
+export const CarouselSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const maxSlideIndex = dummySrc.length - 1;

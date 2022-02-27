@@ -6,8 +6,8 @@ import { Modal } from "./component/Modal";
 import { Tab } from "./component/Tab";
 import { Tag } from "./component/Tag";
 import { Toggle } from "./component/Toggle";
-import { CaroselIdx } from "./component/CaroselIdx";
-import { CaroselSlider } from "./component/CaroselSlider";
+import { CarouselIdx } from "./component/CarouselIdx";
+import { CarouselSlider } from "./component/CarouselSlider";
 
 export const WholeContainer = styled.div`
   display: flex;
@@ -59,12 +59,12 @@ const App = () => {
           <ClickToEdit />
         </SubContainer>
         <SubContainer>
-          <Title>CaroselIdx</Title>
-          <CaroselIdx />
+          <Title>CarouselIdx</Title>
+          <CarouselIdx />
         </SubContainer>
         <SubContainer>
-          <Title>CaroselSlider</Title>
-          <CaroselSlider />
+          <Title>CarouselSlider</Title>
+          <CarouselSlider />
         </SubContainer>
       </WholeContainer>
     </>
