@@ -36,7 +36,11 @@ toggle 상태를 설명하는 description(toggle Switch on || toggle Switch off)
 ![Toggle 수정 후](https://user-images.githubusercontent.com/87353284/155888153-40f63f11-e920-45d8-959a-a366e4462960.gif)  
 
 #### 해결 방법
-background의 linear-gradient를 설정하여 해결
+background의 linear-gradient와 background-size 200%로 설정하여 해결  
+linear-gradient(to left,  ${subColor} 50%, ${mainColor} 50%) right은 오른쪽에서 왼쪽으로 gradient 효과를 주는데 subColor 50%를 시작으로 mainColor 50%으로 색깔이 점차 변한다는 의미이다. 그런데 이 설정의 상태에서 background-size를 200%(100%이 아님)으로 주면 mainColor 50%을 준게 결국에는 mainColr 100%와 동일한 효과를 주게 되는 것이다.
+
+토근 버튼을 누르면 background: linear-gradient(to right,  ${mainColor} 50%, ${subColor} 50%) left으로 바뀌는데 이건 왼쪽에서 오른쪽으로 mainColor에서 subColor로 바뀐다는 의미인데 처음과는 반대로 subColor 50%을 준게 background-size 200% 설정에 영향을 받아 subColor 100%와 동일하게 된다.  
+
 ```js
 >.toggle-container {
     background: linear-gradient(to left,  ${subColor} 50%, ${mainColor} 50%) right;
