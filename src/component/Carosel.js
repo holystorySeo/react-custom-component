@@ -19,7 +19,10 @@ const WholeContainer = styled.div`
     align-items: center;
     border: none;
 
-    & hover: {
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      background-color: coral;
+      color: #fff;
     }
 
     > img {
