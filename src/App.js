@@ -6,6 +6,7 @@ import { Modal } from './component/Modal';
 import { Tab } from './component/Tab';
 import { Tag } from './component/Tag';
 import { Toggle } from './component/Toggle';
+import { Carosel } from './component/Carosel';
 
 export const WholeContainer = styled.div`
   display: flex;
@@ -56,6 +57,10 @@ const App = () => {
           <Title>ClickToEdit</Title>
           <ClickToEdit />
         </SubContainer>
+        <SubContainer>
+          <Title>Carosel</Title>
+          <Carosel />
+        </SubContainer>     
       </WholeContainer>
     </>
   )
