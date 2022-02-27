@@ -30,10 +30,10 @@ toggle 상태를 설명하는 description(toggle Switch on || toggle Switch off)
 1.CSS: 토근 원이 이동을 하면서 배경색이 원의 중간까지만 채워지는 느낌의 효과   
 <br>
 [수정 전]: 한번에 배경색이 변한다.  
-![Feb-28-2022 00-22-44](https://user-images.githubusercontent.com/87353284/155888438-f5439d12-be82-4ca9-8b6f-54c47cedfb05.gif)  
+![Toggle 수정 전](https://user-images.githubusercontent.com/87353284/155888438-f5439d12-be82-4ca9-8b6f-54c47cedfb05.gif)  
 <br>
-[수정 후]: 토글 원의 이동과  원의 중간까지만 배경색이 변한다.  
-![Feb-28-2022 00-13-47](https://user-images.githubusercontent.com/87353284/155888153-40f63f11-e920-45d8-959a-a366e4462960.gif)  
+[수정 후]: 토글 원의 이동과 함께 원의 중간까지만 배경색이 변한다.  
+![Toggle 수정 후](https://user-images.githubusercontent.com/87353284/155888153-40f63f11-e920-45d8-959a-a366e4462960.gif)  
 
 #### 해결 방법
 background의 linear-gradient를 설정하여 해결
