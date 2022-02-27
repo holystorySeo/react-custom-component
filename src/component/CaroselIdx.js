@@ -22,7 +22,6 @@ const WholeContainer = styled.div`
     &:hover {
       transition: all 0.3s ease-in-out;
       background-color: coral;
-      color: #fff;
     }
 
     > img {
@@ -39,7 +38,7 @@ const IMG = styled.img`
   height: 100%;
 `;
 
-export const Carosel = () => {
+export const CaroselIdx = () => {
   const [currentImgIdx, setCurrentImgIdx] = useState([0]); //현재 보여지는 인덱스 값, 초기값 0
 
   const ImgHandler = (btnType) => {

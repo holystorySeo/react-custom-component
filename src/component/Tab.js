@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import { useState } from "react";
+import styled from "styled-components";
 
 export const TabContainer = styled.div`
   display: flex;
   height: 17%;
-  background-color: #D8D8D8;
+  background-color: #d8d8d8;
   padding-left: 50px;
   margin-top: 10px;
 
-  >.submenu {
+  > .submenu {
     width: 100%;
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@ export const TabContainer = styled.div`
     padding-left: 10px;
 
     &.submenu--focused {
-      background-color: #8000FF;
+      background-color: coral;
       color: white;
     }
   }
@@ -33,14 +33,14 @@ export const Desc = styled.div`
   font-weight: 500;
 `;
 
-export const Tab= () => {
-  const menuArr = [ 
-    { tabMenu: 'Tab menu ONE', content: 'Tab1' },
-    { tabMenu: 'Tab menu TWO', content: 'Tab2' },
-    { tabMenu: 'Tab menu THREE', content: 'Tab3' }
+export const Tab = () => {
+  const menuArr = [
+    { tabMenu: "Tab menu ONE", content: "Tab1" },
+    { tabMenu: "Tab menu TWO", content: "Tab2" },
+    { tabMenu: "Tab menu THREE", content: "Tab3" },
   ];
 
-  const [ isTabSelected, setIsTabSelected ] = useState(0);
+  const [isTabSelected, setIsTabSelected] = useState(0);
 
   const tabHandler = (id) => {
     setIsTabSelected(id);
@@ -51,13 +51,19 @@ export const Tab= () => {
       <TabContainer>
         {menuArr.map((el, idx) => {
           return (
-            <div key={idx} className={`submenu ${isTabSelected === idx ? 'submenu--focused' : ''}`} onClick={() => tabHandler(idx)}>{el.content}</div>
-          )
+            <div
+              key={idx}
+              className={`submenu ${
+                isTabSelected === idx ? "submenu--focused" : ""
+              }`}
+              onClick={() => tabHandler(idx)}
+            >
+              {el.content}
+            </div>
+          );
         })}
       </TabContainer>
-      <Desc>
-        {menuArr[isTabSelected].tabMenu}
-      </Desc>
+      <Desc>{menuArr[isTabSelected].tabMenu}</Desc>
     </>
-  )
-}
+  );
+};

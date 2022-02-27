@@ -1,12 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { AutoComplete } from './component/AutoComplete';
-import { ClickToEdit } from './component/ClickToEdit';
-import { Modal } from './component/Modal';
-import { Tab } from './component/Tab';
-import { Tag } from './component/Tag';
-import { Toggle } from './component/Toggle';
-import { Carosel } from './component/Carosel';
+import React from "react";
+import styled from "styled-components";
+import { AutoComplete } from "./component/AutoComplete";
+import { ClickToEdit } from "./component/ClickToEdit";
+import { Modal } from "./component/Modal";
+import { Tab } from "./component/Tab";
+import { Tag } from "./component/Tag";
+import { Toggle } from "./component/Toggle";
+import { CaroselIdx } from "./component/CaroselIdx";
+import { CaroselSlider } from "./component/CaroselSlider";
 
 export const WholeContainer = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ export const WholeContainer = styled.div`
 export const SubContainer = styled.div`
   width: 40%;
   height: 20rem;
-  border: 2px solid #A4A4A4;
+  border: 2px solid #a4a4a4;
   border-radius: 10px;
   margin: 2rem auto;
 `;
@@ -58,12 +59,16 @@ const App = () => {
           <ClickToEdit />
         </SubContainer>
         <SubContainer>
-          <Title>Carosel</Title>
-          <Carosel />
-        </SubContainer>     
+          <Title>CaroselIdx</Title>
+          <CaroselIdx />
+        </SubContainer>
+        <SubContainer>
+          <Title>CaroselSlider</Title>
+          <CaroselSlider />
+        </SubContainer>
       </WholeContainer>
     </>
-  )
-}
+  );
+};
 
 export default App;

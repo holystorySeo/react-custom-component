@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import { useState } from "react";
+import styled from "styled-components";
 
-const mainColor = '#8000FF'; // mainColor 변수 선언
-const subColor = '#E6E6E6'; // subColor 변수 선언
+const mainColor = "coral"; // mainColor 변수 선언
+const subColor = "#E6E6E6"; // subColor 변수 선언
 
 export const ToggleContainer = styled.div`
   display: flex;
@@ -51,20 +51,28 @@ export const ToggleContainer = styled.div`
 `;
 
 export const Toggle = () => {
-  const [ isToggleOn, setIsToggleOn ] = useState(false);
+  const [isToggleOn, setIsToggleOn] = useState(false);
 
   const toggleHandler = () => {
     setIsToggleOn(!isToggleOn);
-  }
+  };
 
   return (
     <>
       <ToggleContainer>
-        <div className={`toggle-container ${isToggleOn ? 'toggle--checked' : ''}`} onClick={toggleHandler}>
-          <div className={`toggle-circle ${isToggleOn ? 'toggle--checked' : ''}`} onClick={toggleHandler} />
+        <div
+          className={`toggle-container ${isToggleOn ? "toggle--checked" : ""}`}
+          onClick={toggleHandler}
+        >
+          <div
+            className={`toggle-circle ${isToggleOn ? "toggle--checked" : ""}`}
+            onClick={toggleHandler}
+          />
         </div>
-        <div className='desc' onClick={toggleHandler}>{isToggleOn ? 'Toggle Switch ON' : 'Toggle Switch OFF'}</div> 
+        <div className="desc" onClick={toggleHandler}>
+          {isToggleOn ? "Toggle Switch ON" : "Toggle Switch OFF"}
+        </div>
       </ToggleContainer>
     </>
-  )
-}
+  );
+};

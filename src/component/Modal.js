@@ -24,7 +24,7 @@ export const ModalContainer = styled.div`
 export const ModalBtn = styled.button`
   width: 100px;
   height: 2.5rem;
-  background-color: #8000ff;
+  background-color: coral;
   border-radius: 50px;
   color: white;
   font-weight: 900;
