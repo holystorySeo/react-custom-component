@@ -38,6 +38,7 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   border: none;
+  background: none;
 
   &:hover {
     transition: all 0.3s ease-in-out;
@@ -68,7 +69,6 @@ export const CaroselSlider = () => {
   };
 
   useEffect(() => {
-    console.log(slideRef.current);
     slideRef.current.style.transition = "all 0.5s ease-in-out";
     slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
   }, [currentSlide]);

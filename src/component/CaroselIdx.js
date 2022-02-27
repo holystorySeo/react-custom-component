@@ -18,20 +18,17 @@ const WholeContainer = styled.div`
     justify-content: center;
     align-items: center;
     border: none;
+    background: none;
 
     &:hover {
       transition: all 0.3s ease-in-out;
       background-color: coral;
     }
-
-    > img {
-      width: 70%;
-    }
   }
 `;
 
 const IMG = styled.img`
-  object-fit: fill;
+  object-fit: cover;
   border: 1px solid black;
   border-radius: 10px;
   width: 25%;
@@ -39,9 +36,10 @@ const IMG = styled.img`
 `;
 
 export const CaroselIdx = () => {
-  const [currentImgIdx, setCurrentImgIdx] = useState([0]); //현재 보여지는 인덱스 값, 초기값 0
+  const [currentImgIdx, setCurrentImgIdx] = useState(0); //현재 보여지는 인덱스 값, 초기값 0
 
   const ImgHandler = (btnType) => {
+    console.log(currentImgIdx);
     const maxIdx = dummySrc.length - 1;
 
     if (btnType === "minus" && currentImgIdx >= 0) {
