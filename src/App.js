@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Header } from './component/Header';
-import { AutoComplete } from './component/AutoComplete';
-import { ClickToEdit } from './component/ClickToEdit';
-import { Modal } from './component/Modal';
-import { Tab } from './component/Tab';
-import { Tag } from './component/Tag';
-import { Toggle } from './component/Toggle';
-import { CarouselIdx } from './component/CarouselIdx';
-import { CarouselSlider } from './component/CarouselSlider';
 import { dummySrc } from './static/dummys';
+import { RootComponent } from './component/RootComponent';
 
 export const WholeContainer = styled.div`
   display: flex;
@@ -33,9 +26,10 @@ export const Title = styled.div`
 `;
 
 function App() {
-  const [menu, setMenu] = useState(0);
+  const [menuIndex, setMenuIndex] = useState(0);
   const handleMenus = (e, idx) => {
-    setMenu(idx);
+    console.log(idx);
+    setMenuIndex(idx);
   };
   return (
     <>
@@ -51,8 +45,7 @@ function App() {
                   role="presentation"
                   id={idx}
                   key={idx}
-                  onClick={() => {}}
-                  onKeyPress={(e) => handleMenus(e, idx)}
+                  onClick={(e) => handleMenus(e, idx)}
                 >
                   {menu}
                 </li>
@@ -62,14 +55,10 @@ function App() {
         </div>
         <div className="right-current-side">
           <WholeContainer>
-            {dummySrc.menus.map((menu) => {
-              return (
-                <SubContainer>
-                  <Title>{menu}</Title>
-                  <Toggle />
-                </SubContainer>
-              );
-            })}
+            <SubContainer>
+              <Title>{dummySrc.menus[menuIndex]}</Title>
+              <RootComponent idx={menuIndex} />
+            </SubContainer>
           </WholeContainer>
         </div>
       </div>

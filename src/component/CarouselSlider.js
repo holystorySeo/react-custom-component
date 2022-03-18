@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
-import { dummySrc } from "../static/dummys";
+import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
+import { dummySrc } from '../static/dummys';
 
-export const CarouselSlider = () => {
+export function CarouselSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const maxSlideIndex = dummySrc.length - 1;
@@ -24,7 +24,7 @@ export const CarouselSlider = () => {
   };
 
   useEffect(() => {
-    slideRef.current.style.transition = "all 0.5s ease-in-out";
+    slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
   }, [currentSlide]);
 
@@ -51,8 +51,7 @@ export const CarouselSlider = () => {
       </Button>
     </CaroselSliderContainer>
   );
-};
-
+}
 
 const CaroselSliderContainer = styled.div`
   margin-top: 45px;
@@ -102,4 +101,3 @@ const Button = styled.button`
     border-radius: 5px;
   }
 `;
-
