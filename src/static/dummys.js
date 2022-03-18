@@ -25,5 +25,12 @@ export const dummySrc = {
     'CarouselIdx',
     'CarouselSlider',
     'Loading',
+    'Modal',
+    'Tab',
+    'Tag',
+    'AutoComplete',
+    'CarouselIdx',
+    'CarouselSlider',
+    'Loading',
   ],
 };
