@@ -1,8 +1,10 @@
-import { useState } from "react";
-import styled from "styled-components";
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const mainColor = "coral"; // mainColor 변수 선언
-const subColor = "#E6E6E6"; // subColor 변수 선언
+const mainColor = 'coral'; // mainColor 변수 선언
+const subColor = '#E6E6E6'; // subColor 변수 선언
 
 export const ToggleContainer = styled.div`
   display: flex;
@@ -16,12 +18,12 @@ export const ToggleContainer = styled.div`
     height: 24px;
     border-radius: 30px;
     // left에서 right으로 color 변화 subColor --> mainColor 50%이므로 절반이나 size 200%로 꽉참
-    background: ${subColor};
+    background: linear-gradient(to left,  ${subColor} 50%, ${mainColor} 50%) right;
     background-size: 200%;
     transition: 1s;
     cursor: pointer;
     &.toggle--checked {
-      background: ${mainColor};
+      background: linear-gradient(to right,  ${mainColor} 50%, ${subColor} 50%) left;
       background-size: 200%;
       transition: 1s;
     }
@@ -50,7 +52,7 @@ export const ToggleContainer = styled.div`
   }
 `;
 
-export const Toggle = () => {
+export function Toggle() {
   const [isToggleOn, setIsToggleOn] = useState(false);
 
   const toggleHandler = () => {
@@ -58,21 +60,19 @@ export const Toggle = () => {
   };
 
   return (
-    <>
-      <ToggleContainer>
+    <ToggleContainer>
+      <div
+        className={`toggle-container ${isToggleOn ? 'toggle--checked' : ''}`}
+        onClick={toggleHandler}
+      >
         <div
-          className={`toggle-container ${isToggleOn ? "toggle--checked" : ""}`}
+          className={`toggle-circle ${isToggleOn ? 'toggle--checked' : ''}`}
           onClick={toggleHandler}
-        >
-          <div
-            className={`toggle-circle ${isToggleOn ? "toggle--checked" : ""}`}
-            onClick={toggleHandler}
-          />
-        </div>
-        <div className="desc" onClick={toggleHandler}>
-          {isToggleOn ? "Toggle Switch ON" : "Toggle Switch OFF"}
-        </div>
-      </ToggleContainer>
-    </>
+        />
+      </div>
+      <div className="desc" onClick={toggleHandler}>
+        {isToggleOn ? 'Toggle Switch ON' : 'Toggle Switch OFF'}
+      </div>
+    </ToggleContainer>
   );
-};
+}
