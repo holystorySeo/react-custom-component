@@ -1,13 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import { AutoComplete } from "./component/AutoComplete";
-import { ClickToEdit } from "./component/ClickToEdit";
-import { Modal } from "./component/Modal";
-import { Tab } from "./component/Tab";
-import { Tag } from "./component/Tag";
-import { Toggle } from "./component/Toggle";
-import { CarouselIdx } from "./component/CarouselIdx";
-import { CarouselSlider } from "./component/CarouselSlider";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Header } from './component/Header';
+import { AutoComplete } from './component/AutoComplete';
+import { ClickToEdit } from './component/ClickToEdit';
+import { Modal } from './component/Modal';
+import { Tab } from './component/Tab';
+import { Tag } from './component/Tag';
+import { Toggle } from './component/Toggle';
+import { CarouselIdx } from './component/CarouselIdx';
+import { CarouselSlider } from './component/CarouselSlider';
+import { dummySrc } from './static/dummys';
 
 export const WholeContainer = styled.div`
   display: flex;
@@ -30,45 +32,49 @@ export const Title = styled.div`
   margin: 10px;
 `;
 
-const App = () => {
+function App() {
+  const [menu, setMenu] = useState(0);
+  const handleMenus = (e, idx) => {
+    setMenu(idx);
+  };
   return (
     <>
-      <WholeContainer>
-        <SubContainer>
-          <Title>Toggle</Title>
-          <Toggle />
-        </SubContainer>
-        <SubContainer>
-          <Title>Modal</Title>
-          <Modal />
-        </SubContainer>
-        <SubContainer>
-          <Title>Tab</Title>
-          <Tab />
-        </SubContainer>
-        <SubContainer>
-          <Title>Tag</Title>
-          <Tag />
-        </SubContainer>
-        <SubContainer>
-          <Title>AutoComplete</Title>
-          <AutoComplete />
-        </SubContainer>
-        <SubContainer>
-          <Title>ClickToEdit</Title>
-          <ClickToEdit />
-        </SubContainer>
-        <SubContainer>
-          <Title>CarouselIdx</Title>
-          <CarouselIdx />
-        </SubContainer>
-        <SubContainer>
-          <Title>CarouselSlider</Title>
-          <CarouselSlider />
-        </SubContainer>
-      </WholeContainer>
+      <div className="header">
+        <Header />
+      </div>
+      <div className="body">
+        <div className="left-component-list-side">
+          <ul>
+            {dummySrc.menus.map((menu, idx) => {
+              return (
+                <li
+                  role="presentation"
+                  id={idx}
+                  key={idx}
+                  onClick={() => {}}
+                  onKeyPress={(e) => handleMenus(e, idx)}
+                >
+                  {menu}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="right-current-side">
+          <WholeContainer>
+            {dummySrc.menus.map((menu) => {
+              return (
+                <SubContainer>
+                  <Title>{menu}</Title>
+                  <Toggle />
+                </SubContainer>
+              );
+            })}
+          </WholeContainer>
+        </div>
+      </div>
     </>
   );
-};
+}
 
 export default App;
