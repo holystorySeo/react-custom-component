@@ -19,7 +19,6 @@ export function RootComponent({ idx }) {
       return <Tab />;
     case 3:
       return <Tag />;
-
     case 4:
       return <AutoComplete />;
     case 5:
