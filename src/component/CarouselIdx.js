@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import styled from "styled-components";
-import { dummySrc } from "../static/dummys";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { dummySrc } from '../static/dummys';
 
 const WholeContainer = styled.div`
   display: flex;
@@ -36,32 +35,32 @@ const IMG = styled.img`
   height: 100%;
 `;
 
-export const CarouselIdx = () => {
-  const [currentImgIdx, setCurrentImgIdx] = useState(0); //현재 보여지는 인덱스 값, 초기값 0
+export function CarouselIdx() {
+  const [currentImgIdx, setCurrentImgIdx] = useState(0); // 현재 보여지는 인덱스 값, 초기값 0
 
   const ImgHandler = (btnType) => {
     console.log(currentImgIdx);
     const maxIdx = dummySrc.length - 1;
 
-    if (btnType === "minus" && currentImgIdx >= 0) {
+    if (btnType === 'minus' && currentImgIdx >= 0) {
       setCurrentImgIdx(currentImgIdx - 1);
-      if (currentImgIdx === 0) setCurrentImgIdx(maxIdx); //인덱스 맨처음에 왔을 때는 가장 마지막 인덱스로 이동
-    } else if (btnType === "plus" && currentImgIdx <= maxIdx) {
+      if (currentImgIdx === 0) setCurrentImgIdx(maxIdx); // 인덱스 맨처음에 왔을 때는 가장 마지막 인덱스로 이동
+    } else if (btnType === 'plus' && currentImgIdx <= maxIdx) {
       setCurrentImgIdx(currentImgIdx + 1);
-      if (currentImgIdx === maxIdx) setCurrentImgIdx(0); //인덱스 맨끝으로 왔을 때는 가장 처음 인덱스로 이동
+      if (currentImgIdx === maxIdx) setCurrentImgIdx(0); // 인덱스 맨끝으로 왔을 때는 가장 처음 인덱스로 이동
     }
   };
 
   return (
     <WholeContainer>
-      <button onClick={() => ImgHandler("minus")}>
+      <button type="button" onClick={() => ImgHandler('minus')}>
         <img
           src="https://img.icons8.com/ios-glyphs/50/000000/double-left--v1.png"
           alt="없음"
         />
       </button>
       <IMG src={dummySrc[currentImgIdx]} />
-      <button onClick={() => ImgHandler("plus")}>
+      <button type="button" onClick={() => ImgHandler('plus')}>
         <img
           src="https://img.icons8.com/ios-glyphs/50/000000/double-right.png"
           alt="없음"
@@ -69,4 +68,4 @@ export const CarouselIdx = () => {
       </button>
     </WholeContainer>
   );
-};
+}

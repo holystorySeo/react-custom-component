@@ -1,5 +1,5 @@
-import { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 export const TabContainer = styled.div`
   display: flex;
@@ -33,11 +33,11 @@ export const Desc = styled.div`
   font-weight: 500;
 `;
 
-export const Tab = () => {
+export function Tab() {
   const menuArr = [
-    { tabMenu: "Tab menu ONE", content: "Tab1" },
-    { tabMenu: "Tab menu TWO", content: "Tab2" },
-    { tabMenu: "Tab menu THREE", content: "Tab3" },
+    { tabMenu: 'Tab menu ONE', content: 'Tab1' },
+    { tabMenu: 'Tab menu TWO', content: 'Tab2' },
+    { tabMenu: 'Tab menu THREE', content: 'Tab3' },
   ];
 
   const [isTabSelected, setIsTabSelected] = useState(0);
@@ -52,9 +52,10 @@ export const Tab = () => {
         {menuArr.map((el, idx) => {
           return (
             <div
+              role="presentation"
               key={idx}
               className={`submenu ${
-                isTabSelected === idx ? "submenu--focused" : ""
+                isTabSelected === idx ? 'submenu--focused' : ''
               }`}
               onClick={() => tabHandler(idx)}
             >
@@ -66,4 +67,4 @@ export const Tab = () => {
       <Desc>{menuArr[isTabSelected].tabMenu}</Desc>
     </>
   );
-};
+}
