@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { BiChevronRightCircle } from 'react-icons/bi';
 import { dummySrc } from '../static/dummys';
 import { RootComponent } from '../component/RootComponent';
 
@@ -29,8 +30,13 @@ export function Main() {
       </div>
       <div className="right-current-side">
         <RightSideWrap>
+          <Title>{dummySrc.menus[menuIndex]}</Title>
+          <Docs>
+            <BiChevronRightCircle size="1.8rem" />
+            <Desc>{dummySrc.docs[menuIndex]}</Desc>
+          </Docs>
+
           <SubContainer>
-            <Title>{dummySrc.menus[menuIndex]}</Title>
             <RootComponent idx={menuIndex} />
           </SubContainer>
         </RightSideWrap>
@@ -79,7 +85,7 @@ const RightSideWrap = styled.div`
 `;
 
 const SubContainer = styled.div`
-  width: 50%;
+  width: 40%;
   height: 20rem;
   border: 2px solid #a4a4a4;
   border-radius: 10px;
@@ -90,5 +96,17 @@ const Title = styled.div`
   font-size: 1.5rem;
   font-weight: 900;
   float: left;
-  margin: 10px;
+  margin: 15px 15px;
+`;
+
+const Docs = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+`;
+
+const Desc = styled.span`
+  margin: 13px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
 `;
