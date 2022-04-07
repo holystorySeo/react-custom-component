@@ -48,6 +48,7 @@ const MainContainer = styled.div`
     flex: 1 0 0;
     border-right: 1px solid black;
     overflow-y: scroll;
+    cursor: pointer;
 
     > ul {
       list-style: none;

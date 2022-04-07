@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
 export const InputBox = styled.div`
@@ -27,7 +27,7 @@ export const InputView = styled.div`
   }
 `;
 
-export const MyInput = ({ value, handleValueChange }) => {
+export function MyInput({ value, handleValueChange }) {
   const inputEl = useRef(null);
   const [isEditMode, setEditMode] = useState(false);
   const [newValue, setNewValue] = useState(value);
@@ -55,41 +55,51 @@ export const MyInput = ({ value, handleValueChange }) => {
     <InputBox>
       {isEditMode ? (
         <InputEdit
-          type='text'
+          type="text"
           value={newValue}
           ref={inputEl}
           onBlur={handleBlur}
           onChange={handleInputChange}
         />
       ) : (
-        <span onClick={handleClick}>{newValue}</span>
+        <span role="presentation" onClick={handleClick}>
+          {newValue}
+        </span>
       )}
     </InputBox>
   );
-};
+}
 
 const initailValue = {
   name: '김코딩',
-  age: 20
+  age: 20,
 };
 
-export const ClickToEdit = () => {
+export function ClickToEdit() {
   const [name, setName] = useState(initailValue.name);
   const [age, setAge] = useState(initailValue.age);
 
   return (
     <>
       <InputView>
-        <label>이름</label>
-        <MyInput value={name} handleValueChange={(newValue) => setName(newValue)} />
+        <label htmlFor="name">이름</label>
+        <MyInput
+          value={name}
+          handleValueChange={(newValue) => setName(newValue)}
+        />
       </InputView>
       <InputView>
-        <label>나이</label>
-        <MyInput value={age} handleValueChange={(newValue) => setAge(newValue)} />
+        <label htmlFor="age">나이</label>
+        <MyInput
+          value={age}
+          handleValueChange={(newValue) => setAge(newValue)}
+        />
       </InputView>
       <InputView>
-        <div className='view'>이름 {name} 나이 {age}</div>
+        <div className="view">
+          이름 {name} 나이 {age}
+        </div>
       </InputView>
     </>
   );
-};
+}

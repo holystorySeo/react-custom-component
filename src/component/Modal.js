@@ -1,5 +1,5 @@
-import { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 export const ModalBackground = styled.div`
   position: fixed;
@@ -61,7 +61,7 @@ export const Desc = styled.div`
   font-size: 13px;
 `;
 
-export const Modal = () => {
+export function Modal() {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const modalHandler = () => {
@@ -72,8 +72,8 @@ export const Modal = () => {
     <>
       <ModalContainer>
         <ModalBtn onClick={modalHandler}>
-          {" "}
-          {isOpenModal === false ? "Open Modal" : "Opened!"}
+          {' '}
+          {isOpenModal === false ? 'Open Modal' : 'Opened!'}
         </ModalBtn>
       </ModalContainer>
       {isOpenModal ? (
@@ -88,4 +88,4 @@ export const Modal = () => {
       ) : null}
     </>
   );
-};
+}
