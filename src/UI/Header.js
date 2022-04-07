@@ -1,23 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaReact } from 'react-icons/fa';
 
 export function Header() {
   return (
     <HeaderWrap>
-      <h1>React custom component</h1>
+      <span>
+        <FaReact size="1.5rem" color="coral" />
+      </span>
+      <h2>React custom component</h2>
     </HeaderWrap>
   );
 }
 
 const HeaderWrap = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-left: 10px;
   height: 10%;
-  border-bottom: 1px solid black;
+  border-bottom: 5px solid whitesmoke;
 
-  > h1 {
+  > span {
+    margin-right: 0.5rem;
+    padding: 3px;
+    border: 1px solid coral;
+    border-radius: 5px;
+  }
+
+  > h2 {
     color: coral;
-    text-align: center;
   }
 `;

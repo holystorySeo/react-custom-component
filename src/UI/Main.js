@@ -46,7 +46,8 @@ const MainContainer = styled.div`
 
   > .component-list-side {
     flex: 1 0 0;
-    border-right: 1px solid black;
+    border-right: 1px solid whitesmoke;
+    overflow-x: hidden;
     overflow-y: scroll;
     cursor: pointer;
 
@@ -61,6 +62,8 @@ const MainContainer = styled.div`
         border-bottom: 1px solid whitesmoke;
         line-height: 3rem;
         padding-left: 1rem;
+        font-size: 1.3rem;
+        margin-left: 1rem;
       }
     }
   }
@@ -76,15 +79,15 @@ const RightSideWrap = styled.div`
 `;
 
 const SubContainer = styled.div`
-  width: 40%;
+  width: 50%;
   height: 20rem;
   border: 2px solid #a4a4a4;
   border-radius: 10px;
-  margin: 2rem auto;
+  margin: 3rem auto;
 `;
 
 const Title = styled.div`
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 900;
   float: left;
   margin: 10px;
