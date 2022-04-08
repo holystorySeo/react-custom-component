@@ -4,7 +4,7 @@
 React.js를 활용하여 custom component를 구현하고 있습니다.  
 기능 구현에 직접적인 영향을 주는 라이브러리는 사용하지 않고 있습니다.
 
-[페이지 링크](https://holystoryseo.github.io/react-custom-component/)
+[페이지 링크](https://react-custom-component.vercel.app/)
 
 React-custom-components 목록
 1. Toggle
