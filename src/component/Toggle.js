@@ -1,5 +1,10 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* 
+  React custom component v1.0
+  - Toggle 스위치 on/off 컴포넌트
+  - 작성자: holystorySeo(https://github.com/holystorySeo)
+  - 마지막 업데이트: 2022.04.08
+*/
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -17,15 +22,17 @@ export function Toggle({ handleSubContainerBorder }) {
   return (
     <ToggleContainer>
       <div
+        role="presentation"
         className={`toggle-container ${isToggleOn ? 'toggle--checked' : ''}`}
         onClick={toggleHandler}
       >
         <div
+          role="presentation"
           className={`toggle-circle ${isToggleOn ? 'toggle--checked' : ''}`}
           onClick={toggleHandler}
         />
       </div>
-      <div className="desc" onClick={toggleHandler}>
+      <div role="presentation" className="desc" onClick={toggleHandler}>
         {isToggleOn ? 'Toggle Switch ON' : 'Toggle Switch OFF'}
       </div>
     </ToggleContainer>
