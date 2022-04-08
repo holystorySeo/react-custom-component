@@ -1,5 +1,10 @@
 # React-custom components
+
+### Web
 <kbd><img src="https://user-images.githubusercontent.com/87353284/162345615-7bb0c511-cbbc-49ee-ab96-34c7ec6c0969.gif" /></kbd>
+
+### Resonsive
+<kbd><img src="https://user-images.githubusercontent.com/87353284/162367227-f9398f6c-67d9-4ef3-b23f-6d665f023f99.gif" /></kbd>
 
 React.js를 활용하여 custom component를 구현하고 있습니다.  
 기능 구현에 직접적인 영향을 주는 라이브러리는 사용하지 않고 있습니다.
