@@ -84,6 +84,10 @@ const MainContainer = styled.div`
     overflow-y: scroll;
     cursor: pointer;
 
+    @media (max-width: 600px) {
+      flex: 0;
+    }
+
     > ul {
       list-style: none;
       padding: 0;
@@ -97,6 +101,14 @@ const MainContainer = styled.div`
         padding-left: 1rem;
         font-size: 1.3rem;
         margin-left: 1rem;
+
+        @media (max-width: 900px) {
+          font-size: 1rem;
+        }
+
+        @media (max-width: 750px) {
+          font-size: 0.7rem;
+        }
       }
     }
   }
@@ -109,6 +121,7 @@ const MainContainer = styled.div`
 const RightSideWrap = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 
 const SubContainer = styled.div`
@@ -116,7 +129,8 @@ const SubContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 40%;
-  height: 30rem;
+  height: 60%;
+  min-width: 300px;
   border: 20px solid #a4a4a4;
   border-radius: 10px;
   margin: 3rem auto;
@@ -143,4 +157,8 @@ const Desc = styled.span`
   margin: 13px;
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.3rem;
+  }
 `;
