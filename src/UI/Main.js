@@ -1,3 +1,10 @@
+/* 
+  React custom component v1.0
+  - Toggle 스위치 on.off 컴포넌트
+  - 작성자: holystorySeo(https://github.com/holystorySeo)
+  - 마지막 업데이트: 2022.04.08
+*/
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BiChevronRightCircle } from 'react-icons/bi';
@@ -6,8 +13,18 @@ import { RootComponent } from '../component/RootComponent';
 
 export function Main() {
   const [menuIndex, setMenuIndex] = useState(0);
+  const [subContainerBorder, setSubContainerBorder] = useState(false);
+
   const handleMenus = (e, idx) => {
     setMenuIndex(idx);
+  };
+
+  const handleSubContainerBorder = () => {
+    setSubContainerBorder(!subContainerBorder);
+  };
+
+  const initailizeSubContainerBorder = () => {
+    setSubContainerBorder(false);
   };
 
   return (
@@ -20,7 +37,10 @@ export function Main() {
                 role="presentation"
                 id={idx}
                 key={idx}
-                onClick={(e) => handleMenus(e, idx)}
+                onClick={(e) => {
+                  handleMenus(e, idx);
+                  initailizeSubContainerBorder();
+                }}
               >
                 {menu}
               </li>
@@ -35,9 +55,13 @@ export function Main() {
             <BiChevronRightCircle size="1.8rem" />
             <Desc>{dummySrc.docs[menuIndex]}</Desc>
           </Docs>
-
-          <SubContainer>
-            <RootComponent idx={menuIndex} />
+          <SubContainer
+            className={`${subContainerBorder ? 'border--changed' : ''}`}
+          >
+            <RootComponent
+              idx={menuIndex}
+              handleSubContainerBorder={handleSubContainerBorder}
+            />
           </SubContainer>
         </RightSideWrap>
       </div>
@@ -85,11 +109,18 @@ const RightSideWrap = styled.div`
 `;
 
 const SubContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40%;
-  height: 20rem;
-  border: 2px solid #a4a4a4;
+  height: 30rem;
+  border: 20px solid #a4a4a4;
   border-radius: 10px;
   margin: 3rem auto;
+
+  &.border--changed {
+    border: 20px solid coral;
+  }
 `;
 
 const Title = styled.div`
