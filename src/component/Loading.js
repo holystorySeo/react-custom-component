@@ -1,3 +1,10 @@
+/* 
+  React custom component v1.0
+  - Skeleton UI를 적용한 Loading component
+  - 작성자 : holystorySeo(https://github.com/holystorySeo)
+  - 마지막 업데이트: 2022.04.07
+*/
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -35,8 +42,9 @@ const LoadingContainer = styled.div`
   background-position: 5px 10px, 5px 10px;
   background-size: 100px 100px, 97% 120px;
   background-repeat: repeat-y;
-  animation: skeleton 1s infinite;
+  animation: skeleton 1s infinite; // 아래 keyframe의 animation 설정입니다.
 }
+// keyframe의 이름이 skeleton 입니다.
 @keyframes skeleton {
   to {
     background-position:

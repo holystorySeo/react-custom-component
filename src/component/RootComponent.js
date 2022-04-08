@@ -9,10 +9,10 @@ import { CarouselIdx } from './CarouselIdx';
 import { CarouselSlider } from './CarouselSlider';
 import { Loading } from './Loading';
 
-export function RootComponent({ idx }) {
+export function RootComponent({ idx, handleSubContainerBorder }) {
   switch (idx) {
     case 0:
-      return <Toggle />;
+      return <Toggle handleSubContainerBorder={handleSubContainerBorder} />;
     case 1:
       return <Modal />;
     case 2:

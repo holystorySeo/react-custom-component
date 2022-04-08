@@ -10,7 +10,6 @@ export const ToggleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8rem;
   
   >.toggle-container {
     position: relative;
@@ -20,12 +19,12 @@ export const ToggleContainer = styled.div`
     // left에서 right으로 color 변화 subColor --> mainColor 50%이므로 절반이나 size 200%로 꽉참
     background: linear-gradient(to left,  ${subColor} 50%, ${mainColor} 50%) right;
     background-size: 200%;
-    transition: 1s;
+    transition: 0.5s;
     cursor: pointer;
     &.toggle--checked {
       background: linear-gradient(to right,  ${mainColor} 50%, ${subColor} 50%) left;
       background-size: 200%;
-      transition: 1s;
+      transition: 0.5s;
     }
 
     >.toggle-circle { // toggle-container의 자식 요소
@@ -36,11 +35,11 @@ export const ToggleContainer = styled.div`
       height: 20px;
       border-radius: 50%;
       background-color: #ffffff;
-      transition: 1s;
+      transition: 0.5s;
       cursor: pointer;
       &.toggle--checked {
         left: 39px; // circle이 left 37px까지 이동한다.
-        transition: 1s;
+        transition: 0.5s;
       }
     }
   }
@@ -52,11 +51,12 @@ export const ToggleContainer = styled.div`
   }
 `;
 
-export function Toggle() {
+export function Toggle({ handleSubContainerBorder }) {
   const [isToggleOn, setIsToggleOn] = useState(false);
 
   const toggleHandler = () => {
     setIsToggleOn(!isToggleOn);
+    handleSubContainerBorder();
   };
 
   return (

@@ -18,4 +18,5 @@ export const dummySrc = {
     'CarouselSlider',
     'Loading',
   ],
+  docs: ['Toggle 스위치 on/off 컴포넌트', 'Modal open/close 컴포넌트'],
 };
