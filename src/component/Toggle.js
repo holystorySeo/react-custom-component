@@ -6,7 +6,33 @@ import styled from 'styled-components';
 const mainColor = 'coral'; // mainColor 변수 선언
 const subColor = '#E6E6E6'; // subColor 변수 선언
 
-export const ToggleContainer = styled.div`
+export function Toggle({ handleSubContainerBorder }) {
+  const [isToggleOn, setIsToggleOn] = useState(false);
+
+  const toggleHandler = () => {
+    setIsToggleOn(!isToggleOn);
+    handleSubContainerBorder();
+  };
+
+  return (
+    <ToggleContainer>
+      <div
+        className={`toggle-container ${isToggleOn ? 'toggle--checked' : ''}`}
+        onClick={toggleHandler}
+      >
+        <div
+          className={`toggle-circle ${isToggleOn ? 'toggle--checked' : ''}`}
+          onClick={toggleHandler}
+        />
+      </div>
+      <div className="desc" onClick={toggleHandler}>
+        {isToggleOn ? 'Toggle Switch ON' : 'Toggle Switch OFF'}
+      </div>
+    </ToggleContainer>
+  );
+}
+
+const ToggleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,29 +76,3 @@ export const ToggleContainer = styled.div`
     }
   }
 `;
-
-export function Toggle({ handleSubContainerBorder }) {
-  const [isToggleOn, setIsToggleOn] = useState(false);
-
-  const toggleHandler = () => {
-    setIsToggleOn(!isToggleOn);
-    handleSubContainerBorder();
-  };
-
-  return (
-    <ToggleContainer>
-      <div
-        className={`toggle-container ${isToggleOn ? 'toggle--checked' : ''}`}
-        onClick={toggleHandler}
-      >
-        <div
-          className={`toggle-circle ${isToggleOn ? 'toggle--checked' : ''}`}
-          onClick={toggleHandler}
-        />
-      </div>
-      <div className="desc" onClick={toggleHandler}>
-        {isToggleOn ? 'Toggle Switch ON' : 'Toggle Switch OFF'}
-      </div>
-    </ToggleContainer>
-  );
-}

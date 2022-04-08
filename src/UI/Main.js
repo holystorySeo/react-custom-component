@@ -15,14 +15,17 @@ export function Main() {
   const [menuIndex, setMenuIndex] = useState(0);
   const [subContainerBorder, setSubContainerBorder] = useState(false);
 
+  // 메인 페이지 우측 사이드 메뉴(컴포넌트 리스트) 핸들러
   const handleMenus = (e, idx) => {
     setMenuIndex(idx);
   };
 
+  // Toggle, Modal 등의 버튼을 누르면 박스 테두리 색상 변경 핸들러
   const handleSubContainerBorder = () => {
     setSubContainerBorder(!subContainerBorder);
   };
 
+  // 우측 사이드 메뉴를 변경할 때마다 박스 테두리 색상 회색으로 초기화 핸들러
   const initailizeSubContainerBorder = () => {
     setSubContainerBorder(false);
   };

@@ -14,7 +14,7 @@ export function RootComponent({ idx, handleSubContainerBorder }) {
     case 0:
       return <Toggle handleSubContainerBorder={handleSubContainerBorder} />;
     case 1:
-      return <Modal />;
+      return <Modal handleSubContainerBorder={handleSubContainerBorder} />;
     case 2:
       return <Tab />;
     case 3:
