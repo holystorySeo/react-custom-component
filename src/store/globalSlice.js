@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   menuIdxInfo: {
     // source의 종류는 web, mobile
-    source: 'web',
+    source: '',
     menuIdx: 0,
   },
 };

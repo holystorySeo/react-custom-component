@@ -14,14 +14,14 @@ import { RootComponent } from '../component/RootComponent';
 import { updateMenuIdx } from '../store/globalSlice';
 
 export function Main() {
-  const { menuIdx } = useSelector((state) => state.global.menuIdxInfo);
+  const { source, menuIdx } = useSelector((state) => state.global.menuIdxInfo);
   const [subContainerBorder, setSubContainerBorder] = useState(false);
   const disptach = useDispatch();
 
   // 메인 페이지 우측 사이드 메뉴(컴포넌트 리스트) 핸들러
   const handleMenus = (e, idx) => {
-    const source = 'web';
-    disptach(updateMenuIdx({ source, idx }));
+    const webSource = 'web';
+    disptach(updateMenuIdx({ webSource, idx }));
   };
 
   // Toggle, Modal 등의 버튼을 누르면 박스 테두리 색상 변경 핸들러

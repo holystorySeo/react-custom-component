@@ -12,15 +12,18 @@ import { dummySrc } from '../static/dummys';
 import { updateMenuIdx } from '../store/globalSlice';
 
 export function MenuBar() {
+  const { source } = useSelector((state) => state.global.menuIdxInfo);
+  const [isChangeGlobal, setIsChangeGlbal] = useState(source === 'mobile');
   const disptach = useDispatch();
-  const menuIdx = useSelector((state) => state.global.menuIdx);
-  const [idx, setIdx] = useState(menuIdx === undefined ? false : menuIdx);
 
-  const handleMenuBar = (idx) => {
-    if (idx === false) {
-      return;
-    }
-    disptach(updateMenuIdx(idx));
+  // 모바일 메뉴바의 idx변화를 전역저장소에 적용할지 여부를 결정
+  const handleIsChangeGlobal = () => {
+    setIsChangeGlbal(true);
+  };
+
+  // 전역저장소에 source와 idx를 전달하여 변경
+  const handleMenuBar = (mobileSource, idx) => {
+    if (isChangeGlobal) disptach(updateMenuIdx({ mobileSource, idx }));
   };
 
   return (
@@ -28,7 +31,14 @@ export function MenuBar() {
       <ul>
         {dummySrc.menus.map((menu, idx) => {
           return (
-            <li role="presentation" key={idx} onClick={handleMenuBar(idx)}>
+            <li
+              role="presentation"
+              key={idx}
+              onClick={() => {
+                handleIsChangeGlobal();
+                handleMenuBar('mobile', idx);
+              }}
+            >
               {menu}
             </li>
           );
