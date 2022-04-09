@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaReact } from 'react-icons/fa';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { MenuBar } from './MenuBar';
 
 export function Header() {
+  const [isMenuBar, setIsMenuBar] = useState(false);
+
+  const handleMenuBar = () => {
+    setIsMenuBar(!isMenuBar);
+  };
+
   return (
     <HeaderWrap>
+      {isMenuBar ? <MenuBar /> : ''}
       <span>
         <FaReact className="FaReact--display" size="1.5rem" color="coral" />
         <AiOutlineMenu
           className="AiOutlineMenu--display"
           size="1.5rem"
           color="coral"
+          onClick={handleMenuBar}
         />
       </span>
       <h2>React custom component</h2>

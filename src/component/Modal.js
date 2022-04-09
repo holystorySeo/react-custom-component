@@ -142,10 +142,6 @@ const Desc1 = styled.div`
     font-size: 1rem;
     line-height: 25px;
   }
-
-  /* @media (max-width: 750px) {
-    font-size: 1rem;
-  } ; */
 `;
 
 // 모달창 텍스트 by holystorySeo 부분

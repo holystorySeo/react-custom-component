@@ -5,19 +5,23 @@
   - 마지막 업데이트: 2022.04.08
 */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
 import { BiChevronRightCircle } from 'react-icons/bi';
 import { dummySrc } from '../static/dummys';
 import { RootComponent } from '../component/RootComponent';
+import { updateMenuIdx } from '../store/globalSlice';
 
 export function Main() {
-  const [menuIndex, setMenuIndex] = useState(0);
+  const { menuIdx } = useSelector((state) => state.global.menuIdxInfo);
   const [subContainerBorder, setSubContainerBorder] = useState(false);
+  const disptach = useDispatch();
 
   // 메인 페이지 우측 사이드 메뉴(컴포넌트 리스트) 핸들러
   const handleMenus = (e, idx) => {
-    setMenuIndex(idx);
+    const source = 'web';
+    disptach(updateMenuIdx({ source, idx }));
   };
 
   // Toggle, Modal 등의 버튼을 누르면 박스 테두리 색상 변경 핸들러
@@ -53,16 +57,16 @@ export function Main() {
       </div>
       <div className="right-current-side">
         <RightSideWrap>
-          <Title>{dummySrc.menus[menuIndex]}</Title>
+          <Title>{dummySrc.menus[menuIdx]}</Title>
           <Docs>
             <BiChevronRightCircle size="1.8rem" />
-            <Desc>{dummySrc.docs[menuIndex]}</Desc>
+            <Desc>{dummySrc.docs[menuIdx]}</Desc>
           </Docs>
           <SubContainer
             className={`${subContainerBorder ? 'border--changed' : ''}`}
           >
             <RootComponent
-              idx={menuIndex}
+              idx={menuIdx}
               handleSubContainerBorder={handleSubContainerBorder}
             />
           </SubContainer>
