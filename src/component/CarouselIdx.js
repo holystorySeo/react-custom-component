@@ -39,7 +39,6 @@ export function CarouselIdx() {
   const [currentImgIdx, setCurrentImgIdx] = useState(0); // 현재 보여지는 인덱스 값, 초기값 0
 
   const ImgHandler = (btnType) => {
-    console.log(currentImgIdx);
     const maxIdx = dummySrc.length - 1;
 
     if (btnType === 'minus' && currentImgIdx >= 0) {
