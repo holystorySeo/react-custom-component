@@ -5,22 +5,17 @@
   - 마지막 업데이트: 2022.04.08
 */
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { dummySrc } from '../static/dummys';
-import { updateMenuIdx } from '../store/globalSlice';
+import { updateIdx } from '../store/globalSlice';
 
 export function MenuBar() {
   const disptach = useDispatch();
-  const menuIdx = useSelector((state) => state.global.menuIdx);
-  const [idx, setIdx] = useState(menuIdx === undefined ? false : menuIdx);
 
   const handleMenuBar = (idx) => {
-    if (idx === false) {
-      return;
-    }
-    disptach(updateMenuIdx(idx));
+    disptach(updateIdx(idx));
   };
 
   return (
@@ -28,7 +23,11 @@ export function MenuBar() {
       <ul>
         {dummySrc.menus.map((menu, idx) => {
           return (
-            <li role="presentation" key={idx} onClick={handleMenuBar(idx)}>
+            <li
+              role="presentation"
+              key={idx}
+              onClick={() => handleMenuBar(idx)}
+            >
               {menu}
             </li>
           );
