@@ -112,7 +112,7 @@ Tab 컴포넌트는 탭 메뉴 정보를 menuArr이라는 배열에 미리 담�
 <img src="https://user-images.githubusercontent.com/87353284/162768247-14ca08e5-ef42-4c0b-9b55-225b21dc15e9.gif" width="20%" />
 
 2. 이미지 스프라이트 기법 활영하여 문제 이미지 적용
-background-image의 url 속성을 주고 각 문제마다 background-position과 background-size를 알맞게 설정하여 서버에서 자원 효율화
+background-image의 url 속성을 주고 각 문제마다 background-position과 background-size를 알맞게 설정하여 이미지 로딩 횟수를 줄였습니다.
 ```js
 .contents0 {
     width: 130px;
