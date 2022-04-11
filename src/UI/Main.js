@@ -134,6 +134,7 @@ const SubContainer = styled.div`
   width: 40%;
   height: 60%;
   min-width: 300px;
+  min-height: 100px;
   border: 20px solid #a4a4a4;
   border-radius: 10px;
   margin: 3rem auto;
