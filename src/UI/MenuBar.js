@@ -39,13 +39,16 @@ export function MenuBar() {
 
 const MenuBarContainer = styled.div`
   position: absolute;
-  top: 70px;
+  top: 60px;
   width: 130px;
   height: 200px;
   background: #585858;
   border-radius: 10px;
   padding: 5px 10px;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   > ul {
     list-style: none;
