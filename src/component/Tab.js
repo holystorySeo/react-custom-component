@@ -17,6 +17,11 @@ export function Tab() {
   const [answerOpen, setAnswerOpen] = useState(false);
 
   const tabHandler = (id) => {
+    document.querySelectorAll(`input[type=checkbox]`).forEach((el) => {
+      el.checked = false;
+    });
+    setAnswerOpen(false);
+    setCheckedValue('');
     setIsTabSelected(id);
   };
 
@@ -40,7 +45,9 @@ export function Tab() {
   };
 
   const answerOpenHanlder = () => {
-    setAnswerOpen(true);
+    if (checkedValue) {
+      setAnswerOpen(true);
+    }
   };
 
   return (
@@ -125,14 +132,16 @@ const Desc = styled.div`
   flex: 10 0 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 300px;
   font-size: 15px;
   font-weight: 500;
 
   .question {
-    padding: 10px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 14px;
   }
 
@@ -212,6 +221,6 @@ const AnswerSection = styled.div`
 
 const Answer = styled.div`
   font-size: 8px;
-  padding: 8px;
+  padding: 3px;
   background: #f2f2f2;
 `;
