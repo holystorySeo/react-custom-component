@@ -14,12 +14,17 @@ export function Tab() {
 
   const [isTabSelected, setIsTabSelected] = useState(0);
   const [checkedValue, setCheckedValue] = useState('');
+  const [answerOpen, setAnswerOpen] = useState(false);
 
   const tabHandler = (id) => {
     setIsTabSelected(id);
   };
 
   const checkHandler = ({ target }) => {
+    if (answerOpen) {
+      setAnswerOpen(false);
+    }
+
     if (checkedValue === target.value) {
       // 이미 클릭된 요소를 다시 클릭하면 checked 여부 false로 변경
       target.checked = false;
@@ -32,6 +37,10 @@ export function Tab() {
       target.checked = true;
       setCheckedValue(target.value);
     }
+  };
+
+  const answerOpenHanlder = () => {
+    setAnswerOpen(true);
   };
 
   return (
@@ -71,26 +80,29 @@ export function Tab() {
         <button
           type="button"
           className={`answer-check ${checkedValue ? 'open' : ''}`}
+          onClick={answerOpenHanlder}
         >
           정답 확인
         </button>
       </Desc>
+      <AnswerSection>
+        {answerOpen ? <Answer>{dummySrc.answer[isTabSelected]}</Answer> : ''}
+      </AnswerSection>
     </TabContainer>
   );
 }
 const TabContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
-  height: 80%;
+  height: 100%;
 `;
 
 const TabSection = styled.div`
   display: flex;
-  height: 17%;
+  flex: 2 0 0;
   background-color: #d8d8d8;
-  padding-left: 50px;
-  margin-top: -20px;
 
   > .submenu {
     border-left: 2px solid #bdbdbd;
@@ -110,16 +122,17 @@ const TabSection = styled.div`
 `;
 
 const Desc = styled.div`
+  flex: 10 0 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  height: 80%;
+  height: 300px;
   font-size: 15px;
   font-weight: 500;
 
   .question {
-    padding: 13px;
+    padding: 10px;
     font-size: 14px;
   }
 
@@ -133,7 +146,7 @@ const Desc = styled.div`
 
   .contents1 {
     width: 230px;
-    height: 130px;
+    height: 120px;
     background-position: -35px -195px;
     background-image: url('https://user-images.githubusercontent.com/87353284/162628899-dcdd39db-3363-48a1-b3de-2e850889ec97.jpeg');
     background-size: 300%;
@@ -141,10 +154,10 @@ const Desc = styled.div`
 
   .contents2 {
     width: 130px;
-    height: 200px;
-    background-position: -405px -70px;
+    height: 120px;
+    background-position: -700px -60px;
     background-image: url('https://user-images.githubusercontent.com/87353284/162628899-dcdd39db-3363-48a1-b3de-2e850889ec97.jpeg');
-    background-size: 500%;
+    background-size: 340%;
   }
 
   .optionSection {
@@ -152,9 +165,7 @@ const Desc = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-direction: row;
     width: 200px;
-    height: 20%;
   }
 
   .options {
@@ -169,7 +180,7 @@ const Desc = styled.div`
     justify-content: center;
     align-items: center;
     min-width: 50px;
-    height: 30px;
+    min-height: 30px;
     font-size: 10px;
     color: #a4a4a4;
     background: #d8d8d8;
@@ -189,4 +200,18 @@ const Desc = styled.div`
       }
     }
   }
+`;
+
+const AnswerSection = styled.div`
+  margin-top: 3px;
+  flex: 4 0 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+const Answer = styled.div`
+  font-size: 8px;
+  padding: 8px;
+  background: #f2f2f2;
 `;
