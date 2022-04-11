@@ -18,5 +18,20 @@ export const dummySrc = {
     'CarouselSlider',
     'Loading',
   ],
-  docs: ['Toggle 스위치 on/off 컴포넌트', 'Modal open/close 컴포넌트'],
+  docs: [
+    'Toggle 스위치 on/off 컴포넌트',
+    'Modal open/close 컴포넌트',
+    'Tab 선택 컴포넌트',
+  ],
+  question: [
+    'Q1. 다음의 코드를 실행시킨 후에 result의 값은 무엇이 될까요?',
+    'Q2 .다음의 코드를 실행시킨 후에 result의 값은 무엇이 될까요?',
+    'Q3. 다음의 코드를 실행시킨 후에 result의 값은 무엇이 될까요?',
+  ],
+
+  options: [
+    ['10', '20', '30', '40'],
+    ['10', '20', '30', '40'],
+    ['10', '20', '30', '40'],
+  ],
 };
