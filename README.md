@@ -98,7 +98,6 @@ github 이미지를 클릭하면 본인의 github로 이동합니다.
 <img src="https://user-images.githubusercontent.com/87353284/162754602-5fae4b4a-8f34-4ff8-bd7e-f57b56e23321.gif" width="20%"/>
 
 
-
 ### `Tab`
 Tab 컴포넌트는 탭 메뉴 정보를 menuArr이라는 배열에 미리 담았고 특정 탭을 클릭할 때마다 index가 변경되는 상태값 체크를 위해 useState를 사용하였습니다. li 태그로 메뉴를 생성하고, 각 메뉴 탭을 클릭하였을 경우 뷰가 전환되도록 index 상태값을 변경시키주는 이벤트 핸들러 tabHanlder를 사용하였습니다. 조건부 연산자를 활용하여 클릭한 탭 메뉴만 변하도록 submeno-focused 클래스 변환을 구현하였습니다.
 
@@ -106,6 +105,30 @@ Tab 컴포넌트는 탭 메뉴 정보를 menuArr이라는 배열에 미리 담�
 문제의 정답을 확인할 수 있는 문제 풀이 기능을 추가하여서 모듈의 기능을 풍성하게 하였습니다.
 
 <img src="https://user-images.githubusercontent.com/87353284/162759586-7b4a1d62-4ed3-4a9d-9b70-270878b88816.gif" width="40%" />
+
+### 기술 이슈
+1. 보기를 선택한 상태에서 다른 보기를 선택하면 선택한 보기외에 나머지 보기를 선택하지 않은 상태로 변경하기
+2. 이미 체크한 보기를 다시 선택하면 선택하지 않은 상태로 변경하기
+
+<img src="https://user-images.githubusercontent.com/87353284/162765878-78a0ae15-18a9-4399-a76e-e27d258bc681.gif" />
+
+### 해결 방법
+document.querySelectorAll(`input[type=checkbox]`).forEach로 순회하여 el.checked = false로 할당하였습니다. checkedValue 상태변수에 현재 선택된 보기의 value값을 할당하고 클릭 이벤트 콜백함수로 전달된 인자의 value값과 checkedValue 값이 같으면 '이미 클릭된 요소를 다시 클릭한 것으로 확인'하여 checked 여부를 false로 변경하는 방식으로 해결하였습니다.
+
+```js
+    if (checkedValue === target.value) {
+      // 이미 클릭된 요소를 다시 클릭하면 checked 여부 false로 변경
+      target.checked = false;
+      setCheckedValue('');
+    } else {
+      // 클릭되지 않은 요소를 클릭하면 그 요소를 제외한 나머지는 checked false로 변경
+      document.querySelectorAll(`input[type=checkbox]`).forEach((el) => {
+        el.checked = false;
+      });
+      target.checked = true;
+      setCheckedValue(target.value);
+    }
+```
 
 ### `Tag`
 
