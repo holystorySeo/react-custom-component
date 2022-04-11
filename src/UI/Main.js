@@ -66,6 +66,7 @@ export function Main() {
           >
             <RootComponent
               idx={menuIdx}
+              subContainerBorder={subContainerBorder}
               handleSubContainerBorder={handleSubContainerBorder}
             />
           </SubContainer>

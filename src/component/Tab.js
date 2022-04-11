@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { dummySrc } from '../static/dummys';
 
-export function Tab() {
+export function Tab({ subContainerBorder, handleSubContainerBorder }) {
   const menuArr = ['Tab1', 'Tab2', 'Tab3'];
 
   const [isTabSelected, setIsTabSelected] = useState(0);
@@ -17,6 +17,9 @@ export function Tab() {
   const [answerOpen, setAnswerOpen] = useState(false);
 
   const tabHandler = (id) => {
+    if (subContainerBorder) {
+      handleSubContainerBorder();
+    }
     document.querySelectorAll(`input[type=checkbox]`).forEach((el) => {
       el.checked = false;
     });
@@ -27,6 +30,7 @@ export function Tab() {
 
   const checkHandler = ({ target }) => {
     if (answerOpen) {
+      handleSubContainerBorder();
       setAnswerOpen(false);
     }
 
@@ -45,7 +49,8 @@ export function Tab() {
   };
 
   const answerOpenHanlder = () => {
-    if (checkedValue) {
+    if (checkedValue && !answerOpen) {
+      handleSubContainerBorder();
       setAnswerOpen(true);
     }
   };
@@ -110,6 +115,7 @@ const TabSection = styled.div`
   display: flex;
   flex: 2 0 0;
   background-color: #d8d8d8;
+  padding-left: 50px;
 
   > .submenu {
     border-left: 2px solid #bdbdbd;

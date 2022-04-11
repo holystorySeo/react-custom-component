@@ -9,14 +9,23 @@ import { CarouselIdx } from './CarouselIdx';
 import { CarouselSlider } from './CarouselSlider';
 import { Loading } from './Loading';
 
-export function RootComponent({ idx, handleSubContainerBorder }) {
+export function RootComponent({
+  idx,
+  handleSubContainerBorder,
+  subContainerBorder,
+}) {
   switch (idx) {
     case 0:
       return <Toggle handleSubContainerBorder={handleSubContainerBorder} />;
     case 1:
       return <Modal handleSubContainerBorder={handleSubContainerBorder} />;
     case 2:
-      return <Tab />;
+      return (
+        <Tab
+          subContainerBorder={subContainerBorder}
+          handleSubContainerBorder={handleSubContainerBorder}
+        />
+      );
     case 3:
       return <Tag />;
     case 4:
