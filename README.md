@@ -111,7 +111,7 @@ Tab 컴포넌트는 탭 메뉴 정보를 menuArr이라는 배열에 미리 담�
 1. 보기를 선택한 상태에서 다른 보기를 선택하면 선택한 보기외에 나머지 보기를 선택하지 않은 상태로 변경하기
 2. 이미 체크한 보기를 다시 선택하면 선택하지 않은 상태로 변경하기
 
-<img src="https://user-images.githubusercontent.com/87353284/162765878-78a0ae15-18a9-4399-a76e-e27d258bc681.gif" />
+   <img src="https://user-images.githubusercontent.com/87353284/162765878-78a0ae15-18a9-4399-a76e-e27d258bc681.gif" />
 
 #### 해결 방법
 document.querySelectorAll(`input[type=checkbox]`).forEach로 순회하여 el.checked = false로 할당하였습니다. checkedValue 상태변수에 현재 선택된 보기의 value값을 할당하고 클릭 이벤트 콜백함수로 전달된 인자의 value값과 checkedValue 값이 같으면 '이미 클릭된 요소를 다시 클릭한 것으로 확인'하여 checked 여부를 false로 변경하는 방식으로 해결하였습니다.
