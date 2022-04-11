@@ -103,13 +103,41 @@ github 이미지를 클릭하면 본인의 github로 이동합니다.
 Tab 컴포넌트는 탭 메뉴 정보를 menuArr이라는 배열에 미리 담았고 특정 탭을 클릭할 때마다 index가 변경되는 상태값 체크를 위해 useState를 사용하였습니다. li 태그로 메뉴를 생성하고, 각 메뉴 탭을 클릭하였을 경우 뷰가 전환되도록 index 상태값을 변경시키주는 이벤트 핸들러 tabHanlder를 사용하였습니다. 조건부 연산자를 활용하여 클릭한 탭 메뉴만 변하도록 submeno-focused 클래스 변환을 구현하였습니다.
 
 #### 추가 구현 기능
-문제의 정답을 확인할 수 있는 문제 풀이 기능을 추가하여서 모듈의 기능을 풍성하게 하였습니다.
+1. 문제의 정답을 확인할 수 있는 문제 풀이 기능을 추가하여서 모듈의 기능을 풍성하게 하였습니다.
 
 #### Web
 <img src="https://user-images.githubusercontent.com/87353284/162759586-7b4a1d62-4ed3-4a9d-9b70-270878b88816.gif" width="40%" />
 
 #### Mobile
 <img src="https://user-images.githubusercontent.com/87353284/162768247-14ca08e5-ef42-4c0b-9b55-225b21dc15e9.gif" width="20%" />
+
+2. 이미지 스프라이트 기법 활영하여 문제 이미지 적용
+background-image의 url 속성을 주고 각 문제마다 background-position과 background-size를 알맞게 설정하여 서버에서 자원 효율화
+```js
+.contents0 {
+    width: 130px;
+    height: 100px;
+    background-position: -30px -24px;
+    background-image: url('https://user-images.githubusercontent.com/87353284/162628899-dcdd39db-3363-48a1-b3de-2e850889ec97.jpeg');
+    background-size: 500%;
+  }
+
+  .contents1 {
+    width: 230px;
+    height: 120px;
+    background-position: -35px -195px;
+    background-image: url('https://user-images.githubusercontent.com/87353284/162628899-dcdd39db-3363-48a1-b3de-2e850889ec97.jpeg');
+    background-size: 300%;
+  }
+
+  .contents2 {
+    width: 130px;
+    height: 120px;
+    background-position: -700px -60px;
+    background-image: url('https://user-images.githubusercontent.com/87353284/162628899-dcdd39db-3363-48a1-b3de-2e850889ec97.jpeg');
+    background-size: 340%;
+  }
+```
 
 #### 기술 이슈
 1. 보기를 선택한 상태에서 다른 보기를 선택하면 선택한 보기외에 나머지 보기를 선택하지 않은 상태로 변경하기
