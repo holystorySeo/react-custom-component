@@ -105,7 +105,11 @@ Tab 컴포넌트는 탭 메뉴 정보를 menuArr이라는 배열에 미리 담�
 #### 추가 구현 기능
 문제의 정답을 확인할 수 있는 문제 풀이 기능을 추가하여서 모듈의 기능을 풍성하게 하였습니다.
 
+#### Web
 <img src="https://user-images.githubusercontent.com/87353284/162759586-7b4a1d62-4ed3-4a9d-9b70-270878b88816.gif" width="40%" />
+
+#### Mobile
+<img src="https://user-images.githubusercontent.com/87353284/162768247-14ca08e5-ef42-4c0b-9b55-225b21dc15e9.gif" width="20%" />
 
 #### 기술 이슈
 1. 보기를 선택한 상태에서 다른 보기를 선택하면 선택한 보기외에 나머지 보기를 선택하지 않은 상태로 변경하기
