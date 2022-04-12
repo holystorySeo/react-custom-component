@@ -23,7 +23,7 @@ export function Header() {
           onClick={handleMenuBar}
         />
       </span>
-      <h2>React custom component</h2>
+      <h2>React custom components</h2>
     </HeaderWrap>
   );
 }

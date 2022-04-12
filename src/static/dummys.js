@@ -22,6 +22,7 @@ export const dummySrc = {
     'Toggle 스위치 on/off 컴포넌트',
     'Modal open/close 컴포넌트',
     'Tab 선택 컴포넌트 (feat.JavaScript 문제 풀기)',
+    'Tag 입력/삭제 컴포넌트',
   ],
   question: [
     'Q1. 다음의 코드를 실행시킨 후에 result의 값은 무엇이 될까요?',

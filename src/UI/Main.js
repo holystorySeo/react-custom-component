@@ -136,12 +136,13 @@ const SubContainer = styled.div`
   height: 60%;
   min-width: 300px;
   min-height: 100px;
-  border: 20px solid #a4a4a4;
+  /* max-width: 500px; */
+  border: 15px solid #a4a4a4;
   border-radius: 10px;
   margin: 3rem auto;
 
   &.border--changed {
-    border: 20px solid coral;
+    border: 15px solid coral;
   }
 `;
 

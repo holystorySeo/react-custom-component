@@ -1,3 +1,10 @@
+/* 
+  React custom component v1.0
+  - Modal open/close 컴포넌트
+  - 작성자: holystorySeo(https://github.com/holystorySeo)
+  - 마지막 업데이트: 2022.04.09
+*/
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
