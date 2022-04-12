@@ -111,15 +111,14 @@ Tab 컴포넌트는 탭 메뉴 정보를 menuArr이라는 배열에 미리 담�
 #### Mobile
 <img src="https://user-images.githubusercontent.com/87353284/162768247-14ca08e5-ef42-4c0b-9b55-225b21dc15e9.gif" width="20%" />
 
-2. 이미지 스프라이트 기법을 적용하여 '문제 이미지' 적용
+2. 이미지 스프라이트 기법을 적용하여 '코드 문제 이미지'를 UI에 표출 시켰습니다. background-image의 url 속성을 주고 각 문제마다 background-position과 background-size를 알맞게 설정하여 이미지 로딩 횟수를 줄였습니다.
 
-background-image의 url 속성을 주고 각 문제마다 background-position과 background-size를 알맞게 설정하여 이미지 로딩 횟수를 줄였습니다.
 ```js
 .contents0 {
     width: 130px;
     height: 100px;
     background-position: -30px -24px;
-    background-image: url('https://user-images.githubusercontent.com/87353284/162628899-dcdd39db-3363-48a1-b3de-2e850889ec97.jpeg');
+    background-image: url('2e850889ec97.jpeg');
     background-size: 500%;
   }
 
@@ -127,7 +126,7 @@ background-image의 url 속성을 주고 각 문제마다 background-position과
     width: 230px;
     height: 120px;
     background-position: -35px -195px;
-    background-image: url('https://user-images.githubusercontent.com/87353284/162628899-dcdd39db-3363-48a1-b3de-2e850889ec97.jpeg');
+    background-image: url('2e850889ec97.jpeg');
     background-size: 300%;
   }
 
@@ -135,7 +134,7 @@ background-image의 url 속성을 주고 각 문제마다 background-position과
     width: 130px;
     height: 120px;
     background-position: -700px -60px;
-    background-image: url('https://user-images.githubusercontent.com/87353284/162628899-dcdd39db-3363-48a1-b3de-2e850889ec97.jpeg');
+    background-image: url('2e850889ec97.jpeg');
     background-size: 340%;
   }
 ```
