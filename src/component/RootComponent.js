@@ -34,7 +34,12 @@ export function RootComponent({
         />
       );
     case 4:
-      return <AutoComplete />;
+      return (
+        <AutoComplete
+          subContainerBorder={subContainerBorder}
+          handleSubContainerBorder={handleSubContainerBorder}
+        />
+      );
     case 5:
       return <CarouselIdx />;
     case 6:
