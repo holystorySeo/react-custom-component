@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-export function Tag({ handleSubContainerBorder }) {
+export function Tag({ subContainerBorder, handleSubContainerBorder }) {
   const [isBeenTag, setIsBeenTag] = useState(false); // 해시태그가 있는지 여부 체크
   const [inputValue, setInputValue] = useState(''); // 입력값 체크
   const [tagData, setTagData] = useState([]);
@@ -43,6 +43,7 @@ export function Tag({ handleSubContainerBorder }) {
     if (isBeenTag) {
       setTagData([]);
       setIsBeenTag(false);
+      if (subContainerBorder) handleSubContainerBorder();
     }
   };
 
