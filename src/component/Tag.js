@@ -123,11 +123,11 @@ const TagSectionContainer = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
-  border: 10px solid #e6e6e6;
+  border: 2px solid #e6e6e6;
   border-radius: 10px;
 
   &:focus-within {
-    border: 10px solid coral;
+    border: 2px solid coral;
   }
 `;
 
@@ -139,6 +139,7 @@ const TagListContainer = styled.ul`
   margin: 0;
   padding: 0;
   max-height: 90%;
+  min-width: 100%;
   overflow: auto;
 `;
 
