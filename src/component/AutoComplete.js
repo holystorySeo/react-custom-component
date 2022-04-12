@@ -92,6 +92,10 @@ export function AutoComplete({ subContainerBorder, handleSubContainerBorder }) {
     }
   };
 
+  const initializeSelectedIdx = () => {
+    setSelectedIdx(-1);
+  };
+
   return (
     <AutoCompleteWrapper onClick={handleCloseDropDown}>
       <InputValueContainer hasText={hasText}>
@@ -134,6 +138,8 @@ export function AutoComplete({ subContainerBorder, handleSubContainerBorder }) {
                     selectedIdx === idx ? 'select--focused' : ''
                   }`}
                   onClick={selectList}
+                  onMouseOver={initializeSelectedIdx}
+                  onFocus={initializeSelectedIdx}
                 >
                   {list}
                 </li>
@@ -225,6 +231,10 @@ const DropDownContainer = styled.ul`
     &:hover {
       background: #e6e6e6;
     }
+
+    /* &:hover ~ .select--focused {
+      background: none;
+    } */
 
     &.select--focused {
       background: #e6e6e6;
