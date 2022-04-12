@@ -27,7 +27,12 @@ export function RootComponent({
         />
       );
     case 3:
-      return <Tag handleSubContainerBorder={handleSubContainerBorder} />;
+      return (
+        <Tag
+          subContainerBorder={subContainerBorder}
+          handleSubContainerBorder={handleSubContainerBorder}
+        />
+      );
     case 4:
       return <AutoComplete />;
     case 5:
