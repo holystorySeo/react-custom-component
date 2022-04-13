@@ -165,8 +165,7 @@ document.querySelectorAll(`input[type=checkbox]`).forEach로 순회하여 el.che
 
 ### `Tag`
 #### 설명
-Tag 컴포넌트는 tagData라는 배열 형태의 상태를 가집니다. inputValue 상태로 입력값을 체크하고 Enter를 누르면 addTagData 이벤트 핸들러가 작동하여 기존의 배열값에 추가가 되어서 랜더링 됩니다.
-TagCloseIcon을 클릭하면 removeTagData 함수가 작동하여 배열에서 해당 index를 가진 태그가 삭제되게 됩니다. isBeenTag라는 상태로 tag 유무를 확인하여 '전체삭제' button의 활성화를 결정합니다.
+Tag 컴포넌트는 tagData라는 배열 형태의 상태를 가집니다. inputValue 상태로 입력값을 체크하고 Enter를 누르면 addTagData 이벤트 핸들러가 작동하여 기존의 배열값에 추가가 되어서 랜더링 됩니다. TagCloseIcon을 클릭하면 removeTagData 함수가 작동하여 배열에서 해당 index를 가진 태그가 삭제되게 됩니다. isBeenTag라는 상태로 tag 유무를 확인하여 '전체삭제' button의 활성화를 결정합니다.
 
 #### 구현 화면
 |Web|Mobile|
@@ -179,7 +178,7 @@ TagCloseIcon을 클릭하면 removeTagData 함수가 작동하여 배열에서 �
 #### 해결 방법
 > Tag가 담기는 영역의 max-height를 지정하고 Tag를 입력하는 input 태그 영역을 서로 분리하여 UI의 안정성을 확보하였습니다. 또한 Tag가 길어지거나 많아지는 것을 대비하여 Tag가 담기는 영역의 overflow: auto 속성으로 대응하였습니다.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/87353284/163125708-e8960ab0-3327-44a1-a55d-1deec97beb51.gif" width="35%" /></p>
+<img src="https://user-images.githubusercontent.com/87353284/163125708-e8960ab0-3327-44a1-a55d-1deec97beb51.gif" width="35%" />
 
 ### `AutoComplete`
 
