@@ -79,7 +79,7 @@ export function Main() {
 const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
-  height: 90%;
+  height: 700px;
 
   > .component-list-side {
     flex: 1 0 0;

@@ -219,7 +219,7 @@ const DropDownContainer = styled.ul`
   margin: 0;
   padding: 0;
   letter-spacing: -0.018em;
-  overflow: auto;
+  overflow-y: auto;
 
   > .dropdown-list {
     width: 98%;
