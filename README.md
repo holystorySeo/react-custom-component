@@ -173,6 +173,14 @@ TagCloseIcon을 클릭하면 removeTagData 함수가 작동하여 배열에서 �
 |:-:|:-:|
 |<img src="https://user-images.githubusercontent.com/87353284/163113708-07752263-3bad-4a88-8b70-4bdb99eed86c.gif" width="80%" />|<img src="https://user-images.githubusercontent.com/87353284/163113969-d9c5198a-2adf-46bf-b2c5-dbf3a1b6b59c.gif" width="80%" />|
 
+#### 기술 이슈
+> 한 개의 Tag의 문자크기와 Tag의 갯수는 제한이 없기 때문에 Tag가 길어지거나 갯수가 많아지면 UI가 지저분해지는 문제가 있었고, 갯수가 많아지면 Tag input 창의 UI가 Resize가 되기도 하였습니다.
+
+#### 해결 방법
+> Tag가 담기는 영역의 max-height를 지정하고 Tag를 입력하는 input 태그 영역을 서로 분리하여 UI의 안정성을 확보하였습니다. 또한 Tag가 길어지거나 많아지는 것을 대비하여 Tag가 담기는 영역의 overflow: auto 속성으로 대응하였습니다.
+
+<p align="center"><img src="https://user-images.githubusercontent.com/87353284/163125708-e8960ab0-3327-44a1-a55d-1deec97beb51.gif" width="35%" /></p>
+
 ### `AutoComplete`
 
 AutoCmoplete 컴포넌트는 hasText 상태값으로 input 값의 유무를 확인합니다. matchedListsms 추천 항목을 dropDown 형식으로 보일 수 있도록 filter 역할을 합니다.
