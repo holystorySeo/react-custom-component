@@ -170,7 +170,7 @@ const InputValueContainer = styled.div`
   align-items: center;
   margin-top: 7rem;
   width: 80%;
-  height: 13%;
+  min-height: 13%;
   border: 2px solid #e6e6e6;
   border-radius: ${(props) => (props.hasText ? '10px 10px 0 0' : '10px')};
 
@@ -219,6 +219,7 @@ const DropDownContainer = styled.ul`
   margin: 0;
   padding: 0;
   letter-spacing: -0.018em;
+  overflow: auto;
 
   > .dropdown-list {
     width: 98%;
