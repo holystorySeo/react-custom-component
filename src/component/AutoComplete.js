@@ -92,8 +92,8 @@ export function AutoComplete({ subContainerBorder, handleSubContainerBorder }) {
     }
   };
 
-  const initializeSelectedIdx = () => {
-    setSelectedIdx(-1);
+  const handleMouseOver = (idx) => {
+    setSelectedIdx(idx);
   };
 
   return (
@@ -138,8 +138,8 @@ export function AutoComplete({ subContainerBorder, handleSubContainerBorder }) {
                     selectedIdx === idx ? 'select--focused' : ''
                   }`}
                   onClick={selectList}
-                  onMouseOver={initializeSelectedIdx}
-                  onFocus={initializeSelectedIdx}
+                  onMouseOver={() => handleMouseOver(idx)}
+                  onFocus={handleMouseOver}
                 >
                   {list}
                 </li>
@@ -229,12 +229,8 @@ const DropDownContainer = styled.ul`
     font-size: 1.2rem;
     cursor: pointer;
 
-    &:hover {
+    /* &:hover {
       background: #e6e6e6;
-    }
-
-    /* &:hover ~ .select--focused {
-      background: none;
     } */
 
     &.select--focused {
