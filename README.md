@@ -170,7 +170,7 @@ Tag 컴포넌트는 tagData라는 배열 형태의 상태를 가집니다. input
 #### 구현 화면
 |Web|Mobile|
 |:-:|:-:|
-|<img src="https://user-images.githubusercontent.com/87353284/163113708-07752263-3bad-4a88-8b70-4bdb99eed86c.gif" width="80%" />|<img src="https://user-images.githubusercontent.com/87353284/163113969-d9c5198a-2adf-46bf-b2c5-dbf3a1b6b59c.gif" width="80%" />|
+|<img src="https://user-images.githubusercontent.com/87353284/163676692-ccbcb033-1d50-48c1-9ebb-587144b6b329.gif" width="80%" />|<img src="https://user-images.githubusercontent.com/87353284/163113708-07752263-3bad-4a88-8b70-4bdb99eed86c.gif" width="80%" />|
 
 #### 기술 이슈
 > 한 개의 Tag의 문자크기와 Tag의 갯수는 제한이 없기 때문에 Tag가 길어지거나 갯수가 많아지면 UI가 지저분해지는 문제가 있었고, 갯수가 많아지면 Tag input 창의 UI가 Resize가 되기도 하였습니다.
@@ -181,14 +181,13 @@ Tag 컴포넌트는 tagData라는 배열 형태의 상태를 가집니다. input
 <img src="https://user-images.githubusercontent.com/87353284/163125708-e8960ab0-3327-44a1-a55d-1deec97beb51.gif" width="35%" />
 
 ### `AutoComplete`
+#### 설명
+AutoCmoplete 컴포넌트는 hasText 상태값으로 input 값의 유무를 확인합니다. matchedListsms 추천 항목을 dropDown 형식으로 보일 수 있도록 filter 역할을 합니다. handleCloseDropDown 이벤트 핸들러는 AutoCompleteContainer 영역 밖을 클릭하면 input창이 초기화되는 역할을 합니다. li 태그로 구현된 추천항목 목록에서 개별 목록을 선택하면 input 창의 값을 선택한 값으로 바꾸어 주는 selectList 함수도 있습니다. handleCloseDropDown 도 onClick함수이기 때문에 selectList 함수에는 부모 요소에 이벤트가 전달되는 이벤트 버블링 방지를 위해 stopPropagation 함수를 추가하였습니다.
 
-AutoCmoplete 컴포넌트는 hasText 상태값으로 input 값의 유무를 확인합니다. matchedListsms 추천 항목을 dropDown 형식으로 보일 수 있도록 filter 역할을 합니다.
-
-handleCloseDropDown 이벤트 핸들러는 AutoCompleteContainer 영역 밖을 클릭하면 input창이 초기화되는 역할을 합니다.
-
-li 태그로 구현된 추천항목 목록에서 개별 목록을 선택하면 input 창의 값을 선택한 값으로 바꾸어 주는 selectList 함수도 있습니다. 
-
-handleCloseDropDown 도 onClick함수이기 때문에 selectList 함수에는 부모 요소에 이벤트가 전달되는 이벤트 버블링 방지를 위해 stopPropagation 함수를 추가하였습니다.
+#### 구현 화면
+|Web|Mobile|
+|:-:|:-:|
+|<img src="https://user-images.githubusercontent.com/87353284/163676551-d92e58c7-146d-44d5-9098-0b258854397b.gif" width="80%" />|<img src="https://user-images.githubusercontent.com/87353284/163676587-97b5d8e1-fee7-4079-b9bd-70625f4c22a8.gif" width="80%" />|
 
 ### `ClickToEdit`
 
