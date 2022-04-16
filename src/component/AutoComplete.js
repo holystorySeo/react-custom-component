@@ -90,6 +90,10 @@ export function AutoComplete({ subContainerBorder, handleSubContainerBorder }) {
         setInputValue(matchedList[selectedIdx - 1]);
       }
     }
+
+    if (e.key === 'Enter') {
+      setHasText(false);
+    }
   };
 
   const handleMouseOver = (idx) => {
