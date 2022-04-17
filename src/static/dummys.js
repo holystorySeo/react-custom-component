@@ -1,12 +1,12 @@
 export const dummySrc = {
   image: [
-    `http://image.kyobobook.co.kr/images/book/large/418/l9791190555418.jpg`,
-    `http://image.kyobobook.co.kr/images/book/large/596/l9788965709596.jpg`,
-    `http://image.kyobobook.co.kr/images/book/large/078/l9791160505078.jpg`,
-    `http://image.kyobobook.co.kr/images/book/large/467/l9791191211467.jpg`,
-    `http://image.kyobobook.co.kr/images/book/large/741/l9791196826741.jpg`,
-    `http://image.kyobobook.co.kr/images/book/large/096/l9788984077096.jpg`,
-    `http://image.kyobobook.co.kr/images/book/large/351/l9788963706351.jpg`,
+    `https://image.kyobobook.co.kr/images/book/large/418/l9791190555418.jpg`,
+    `https://image.kyobobook.co.kr/images/book/large/596/l9788965709596.jpg`,
+    `https://image.kyobobook.co.kr/images/book/large/078/l9791160505078.jpg`,
+    `https://image.kyobobook.co.kr/images/book/large/467/l9791191211467.jpg`,
+    `https://image.kyobobook.co.kr/images/book/large/741/l9791196826741.jpg`,
+    `https://image.kyobobook.co.kr/images/book/large/096/l9788984077096.jpg`,
+    `https://image.kyobobook.co.kr/images/book/large/351/l9788963706351.jpg`,
   ],
   menus: [
     'Toggle',
@@ -24,6 +24,7 @@ export const dummySrc = {
     'Tab 이동과 JS문제 풀기 컴포넌트',
     'Tag 입력/삭제 컴포넌트',
     '검색 결과 리스트와 선택 컴포넌트',
+    '이미지 인덱스가 변하는 Carousel 컴포넌트',
   ],
   question: [
     'Q1. 다음의 코드를 실행시킨 후에 result의 값은 무엇이 될까요?',
