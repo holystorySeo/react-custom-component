@@ -25,7 +25,9 @@ export function CarouselIdx() {
           alt="없음"
         />
       </button>
-      <IMG src={dummySrc.image[currentImgIdx]} />
+      <ImgContainer>
+        <img src={dummySrc.image[currentImgIdx]} alt="없음" />
+      </ImgContainer>
       <button type="button" onClick={() => ImgHandler('plus')}>
         <img
           src="https://img.icons8.com/ios-glyphs/50/000000/double-right.png"
@@ -45,7 +47,7 @@ const WholeContainer = styled.div`
   height: 80%;
 
   > button {
-    margin: 10px;
+    margin: 5px;
     width: 50x;
     height: 50px;
     display: flex;
@@ -65,10 +67,14 @@ const WholeContainer = styled.div`
   }
 `;
 
-const IMG = styled.img`
-  object-fit: cover;
-  border: 1px solid #f2f2f2;
-  border-radius: 10px;
+const ImgContainer = styled.div`
   width: 200px;
   height: 275px;
+
+  img {
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
 `;
