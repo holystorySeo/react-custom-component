@@ -6,7 +6,7 @@
 */
 
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { dummySrc } from '../static/dummys';
 import { updateIdx } from '../store/globalSlice';
@@ -24,6 +24,7 @@ export function MenuBar() {
         {dummySrc.menus.map((menu, idx) => {
           return (
             <li
+              className={`menu_list-${idx + 1}`}
               role="presentation"
               key={idx}
               onClick={() => handleMenuBar(idx)}
@@ -35,6 +36,33 @@ export function MenuBar() {
       </ul>
     </MenuBarContainer>
   );
+}
+
+function createCSS() {
+  let styles = '';
+
+  for (let i = 1; i < dummySrc.menus.length; i += 1) {
+    styles += `
+      .menu_list-${i} {
+        transform-origin: top center;
+        animation: slideDown 300ms ${i * 60}ms ease-in-out forwards;
+        font-size: 0.8rem;
+        font-weight: 600;
+        line-height: 2rem;
+        color: white;
+        cursor: pointer;
+        padding-left: 10px;
+        background: #585858;
+        &:hover {
+          background: #fe9a2e;
+          border-radius: 5px;
+        }
+      }
+    `;
+  }
+  return css`
+    ${styles}
+  `;
 }
 
 const MenuBarContainer = styled.div`
@@ -55,22 +83,22 @@ const MenuBarContainer = styled.div`
     padding: 0;
     margin: 0;
 
-    li {
-      font-size: 0.8rem;
-      font-weight: 600;
-      line-height: 2rem;
-      color: white;
-      cursor: pointer;
-      padding-left: 10px;
+    ${createCSS()};
 
-      &:hover {
-        background: #fe9a2e;
-        border-radius: 5px;
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-60px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
-  }
 
-  @media (min-width: 600px) {
-    display: none;
+    @media (min-width: 600px) {
+      display: none;
+    }
   }
 `;
