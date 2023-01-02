@@ -71,8 +71,7 @@ export function Timer() {
   };
 
   const reset = () => {
-    clearInterval(intervalRef.current);
-    intervalRef.current = null;
+    initInterval();
     setIsPause(false);
     setCount(0);
     setMinutes(0);
