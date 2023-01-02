@@ -26,10 +26,14 @@ export function Timer() {
     setCount((c) => c - 1);
   };
 
+  const initInterval = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
+  };
+
   const timeFormat = () => {
     if (count < 0) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
+      initInterval();
       setIsStarting(false);
     } else {
       const min = Math.floor(count / 60);
@@ -51,15 +55,13 @@ export function Timer() {
 
   const pauseAndResume = () => {
     if (count === 0) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
+      initInterval();
       setIsPause(false);
     }
 
     if (count !== 0) {
       if (!isPause) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
+        initInterval();
         setIsPause(true);
       } else {
         intervalRef.current = setInterval(countdown, 1000);
