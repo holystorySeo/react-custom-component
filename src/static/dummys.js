@@ -17,6 +17,7 @@ export const dummySrc = {
     'CarouselIdx',
     'CarouselSlider',
     'Loading',
+    'Timer',
   ],
   docs: [
     'Toggle 스위치 on/off 컴포넌트',
@@ -25,6 +26,9 @@ export const dummySrc = {
     'Tag 입력/삭제 컴포넌트',
     '검색 결과 리스트와 선택 컴포넌트',
     '이미지 인덱스가 변하는 컴포넌트',
+    '',
+    '',
+    'Timer 시작/일시정지/재개/초기화 컴포넌트',
   ],
   question: [
     'Q1. 다음의 코드를 실행시킨 후에 result의 값은 무엇이 될까요?',
