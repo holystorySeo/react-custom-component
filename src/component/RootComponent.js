@@ -8,6 +8,7 @@ import { Toggle } from './Toggle';
 import { CarouselIdx } from './CarouselIdx';
 import { CarouselSlider } from './CarouselSlider';
 import { Loading } from './Loading';
+import { Timer } from './Timer';
 
 export function RootComponent({
   idx,
@@ -46,6 +47,8 @@ export function RootComponent({
       return <CarouselSlider />;
     case 7:
       return <Loading />;
+    case 8:
+      return <Timer />;
     default:
       return <Toggle />;
   }
