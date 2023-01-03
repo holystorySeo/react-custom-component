@@ -35,12 +35,12 @@ export function Timer() {
     if (count < 0) {
       initInterval();
       setIsStarting(false);
-    } else {
-      const min = Math.floor(count / 60);
-      const sec = count % 60;
-      setMinutes(min);
-      setSeconds(sec);
+      return null;
     }
+    const min = Math.floor(count / 60);
+    const sec = count % 60;
+    setMinutes(min);
+    setSeconds(sec);
   };
 
   const start = () => {
